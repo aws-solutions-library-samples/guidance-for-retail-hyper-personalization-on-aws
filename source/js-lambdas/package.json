@@ -1,0 +1,15 @@
+{
+    "name": "js-lambdas",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "@aws-sdk/client-apigatewaymanagementapi": "^3.928.0",
+        "@aws-sdk/client-bedrock-agentcore": "^3.928.0",
+        "@aws-sdk/client-cognito-identity-provider": "^3.928.0",
+        "@aws-sdk/client-dynamodb": "^3.928.0",
+        "@aws-sdk/client-kms": "^3.928.0",
+        "@aws-sdk/client-personalize-events": "^3.928.0",
+        "@aws-sdk/client-personalize-runtime": "^3.928.0",
+        "@aws-sdk/lib-dynamodb": "^3.928.0"
+    }
+}

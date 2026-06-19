@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand: #1a1a1a;
+    --color-brand-light: #f5f3f0;
+    --color-brand-accent: #8b7355;
+    --color-brand-muted: #6b7280;
+    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+    --font-serif: "Playfair Display", Georgia, serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-brand);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

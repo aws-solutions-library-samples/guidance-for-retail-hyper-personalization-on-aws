@@ -1,12 +1,13 @@
-### vsCode ###
-.vscode
+### IDE / Editor ###
+.vscode/
+.idea/
+*.swp
+*.swo
 
 ### macOS ###
-# General
 .DS_Store
 .AppleDouble
 .LSOverride
-# Files that might appear in the root of a volume
 .DocumentRevisions-V100
 .fseventsd
 .Spotlight-V100
@@ -14,14 +15,41 @@
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+**/.DS_Store
 
+### Dependencies ###
 **/node_modules
+
+### Build outputs ###
 **/dist
 **/build
-**/.DS_Store
-**/.angular
-**/.idea
 cdk.out
+
+### Python ###
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+### Environment ###
+.env
+.env.local
+.env.*.local
+
+### Data (regeneratable) ###
 **/data/**.csv
 
-.env
+### Misc ###
+**/.angular
+.playwright-mcp/
+*.zip
+
+### Lambda layers build artifacts ###
+source/js-layers/jwt-layer/build/
+
+### CDK context ###
+cdk.context.json
+
+### Product images (served from S3, not bundled) ###
+source/web-app/public/images/products/

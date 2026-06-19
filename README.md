@@ -1,214 +1,269 @@
-# Guidance Title (required)
+# Guidance for Retail Hyper-Personalization on AWS
 
-The Guidance title should be consistent with the title established first in Alchemy.
+## Table of Contents
 
-**Example:** *Guidance for Product Substitutions on AWS*
-
-This title correlates exactly to the Guidance it’s linked to, including its corresponding sample code repository. 
-
-
-## Table of Contents (required)
-
-List the top-level sections of the README template, along with a hyperlink to the specific section.
-
-### Required
-
-1. [Overview](#overview-required)
+1. [Overview](#overview)
+    - [Architecture](#architecture)
     - [Cost](#cost)
-2. [Prerequisites](#prerequisites-required)
-    - [Operating System](#operating-system-required)
-3. [Deployment Steps](#deployment-steps-required)
-4. [Deployment Validation](#deployment-validation-required)
-5. [Running the Guidance](#running-the-guidance-required)
-6. [Next Steps](#next-steps-required)
-7. [Cleanup](#cleanup-required)
-8. [Notices](#notices-optional)
+2. [Prerequisites](#prerequisites)
+    - [Operating System](#operating-system)
+    - [AWS Account Requirements](#aws-account-requirements)
+    - [Service Limits](#service-limits)
+    - [Supported Regions](#supported-regions)
+3. [Deployment Steps](#deployment-steps)
+4. [Deployment Validation](#deployment-validation)
+5. [Running the Guidance](#running-the-guidance)
+6. [Next Steps](#next-steps)
+7. [Cleanup](#cleanup)
+8. [Notices](#notices)
 
-***Optional***
+## Overview
 
-8. [FAQ, known issues, additional considerations, and limitations](#faq-known-issues-additional-considerations-and-limitations-optional)
-9. [Revisions](#revisions-optional)
-10. [Authors](#authors-optional)
+This Guidance helps retailers offer personalized experiences to shoppers through machine learning (ML) services and generative AI capabilities. It deploys a fully functional e-commerce storefront with:
 
-## Overview (required)
+- **Personalized product recommendations** powered by Amazon Personalize, delivering individually tailored suggestions based on user behavior and preferences
+- **AI Shopping Assistant** powered by Amazon Bedrock AgentCore Runtime, enabling conversational product discovery through natural language
+- **Semantic product search** via Knowledge Bases for Amazon Bedrock (RAG), allowing customers to find products by describing what they need rather than using exact keywords
+- **Real-time interaction tracking** that feeds back into the recommendation model for continuous improvement
 
-1. Provide a brief overview explaining the what, why, or how of your Guidance. You can answer any one of the following to help you write this:
+The sample demonstrates the "dual AI strategy" from the guidance architecture: Amazon Personalize handles behavioral recommendation algorithms while Amazon Bedrock provides natural language understanding and generation for conversational commerce.
 
-    - **Why did you build this Guidance?**
-    - **What problem does this Guidance solve?**
+### Architecture
 
-2. Include the architecture diagram image, as well as the steps explaining the high-level overview and flow of the architecture. 
-    - To add a screenshot, create an ‘assets/images’ folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README. 
+![Architecture Diagram](assets/images/architecture-diagram.jpg)
 
-### Cost ( required )
+The architecture implements two primary data flows from the guidance:
 
-This section is for a high-level cost estimate. Think of a likely straightforward scenario with reasonable assumptions based on the problem the Guidance is trying to solve. Provide an in-depth cost breakdown table in this section below ( you should use AWS Pricing Calculator to generate cost breakdown ).
+**Data Flow 1 — Real-Time Personalization:**
+1. User browses the storefront → frontend requests recommendations via API Gateway
+2. Lambda invokes Amazon Personalize campaign with the user's ID
+3. Personalize returns ranked product recommendations based on interaction history
+4. Lambda enriches results with product metadata from DynamoDB
+5. Frontend displays personalized "Recommended for You" and "You May Also Like" sections
 
-Start this section with the following boilerplate text:
+**Data Flow 3 — AI Shopping Assistant:**
+1. Customer sends a natural language query via WebSocket
+2. Lambda invokes Bedrock AgentCore Runtime with the message
+3. Agent uses tools to search the Knowledge Base (semantic product search), call Personalize (personalized ranking), and query DynamoDB (product details)
+4. Agent generates a conversational response with product recommendations
+5. Response streams back to the customer with clickable product cards
 
-_You are responsible for the cost of the AWS services used while running this Guidance. As of <month> <year>, the cost for running this Guidance with the default settings in the <Default AWS Region (Most likely will be US East (N. Virginia)) > is approximately $<n.nn> per month for processing ( <nnnnn> records )._
+### Cost
 
-Replace this amount with the approximate cost for running your Guidance in the default Region. This estimate should be per month and for processing/serving resonable number of requests/entities.
+You are responsible for the cost of the AWS services used while running this Guidance. As of May 2026, the cost for running this Guidance with the default settings in US East (N. Virginia) is approximately **$400–450 per month** for a low-traffic demo environment. The majority of this cost comes from OpenSearch Serverless (minimum 2 OCUs).
 
-Suggest you keep this boilerplate text:
-_We recommend creating a [Budget](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) through [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) to help manage costs. Prices are subject to change. For full details, refer to the pricing webpage for each AWS service used in this Guidance._
+We recommend creating a [Budget](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html) through [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) to help manage costs. Prices are subject to change. For full details, refer to the pricing webpage for each AWS service used in this Guidance.
 
-### Sample Cost Table ( required )
+**Important:** To minimize costs during evaluation, destroy the stack when not in use (see [Cleanup](#cleanup)). OpenSearch Serverless charges apply continuously while the collection exists.
 
-**Note : Once you have created a sample cost table using AWS Pricing Calculator, copy the cost breakdown to below table and upload a PDF of the cost estimation on BuilderSpace. Do not add the link to the pricing calculator in the ReadMe.**
-
-The following table provides a sample cost breakdown for deploying this Guidance with the default parameters in the US East (N. Virginia) Region for one month.
-
-| AWS service  | Dimensions | Cost [USD] |
-| ----------- | ------------ | ------------ |
-| Amazon API Gateway | 1,000,000 REST API calls per month  | $ 3.50month |
-| Amazon Cognito | 1,000 active users per month without advanced security feature | $ 0.00 |
-
-## Prerequisites (required)
-
-### Operating System (required)
-
-- Talk about the base Operating System (OS) and environment that can be used to run or deploy this Guidance, such as *Mac, Linux, or Windows*. Include all installable packages or modules required for the deployment. 
-- By default, assume Amazon Linux 2/Amazon Linux 2023 AMI as the base environment. All packages that are not available by default in AMI must be listed out.  Include the specific version number of the package or module.
-
-**Example:**
-“These deployment instructions are optimized to best work on **<Amazon Linux 2 AMI>**.  Deployment in another OS may require additional steps.”
-
-- Include install commands for packages, if applicable.
-
-
-### Third-party tools (If applicable)
-
-*List any installable third-party tools required for deployment.*
-
-
-### AWS account requirements (If applicable)
-
-*List out pre-requisites required on the AWS account if applicable, this includes enabling AWS regions, requiring ACM certificate.*
-
-**Example:** “This deployment requires you have public ACM certificate available in your AWS account”
-
-**Example resources:**
-- ACM certificate 
-- DNS record
-- S3 bucket
-- VPC
-- IAM role with specific permissions
-- Enabling a Region or service etc.
-
-
-### aws cdk bootstrap (if sample code has aws-cdk)
-
-<If using aws-cdk, include steps for account bootstrap for new cdk users.>
-
-**Example blurb:** “This Guidance uses aws-cdk. If you are using aws-cdk for first time, please perform the below bootstrapping....”
-
-### Service limits  (if applicable)
-
-<Talk about any critical service limits that affect the regular functioning of the Guidance. If the Guidance requires service limit increase, include the service name, limit name and link to the service quotas page.>
-
-### Supported Regions (if applicable)
-
-<If the Guidance is built for specific AWS Regions, or if the services used in the Guidance do not support all Regions, please specify the Region this Guidance is best suited for>
-
-
-## Deployment Steps (required)
-
-Deployment steps must be numbered, comprehensive, and usable to customers at any level of AWS expertise. The steps must include the precise commands to run, and describe the action it performs.
-
-* All steps must be numbered.
-* If the step requires manual actions from the AWS console, include a screenshot if possible.
-* The steps must start with the following command to clone the repo. ```git clone xxxxxxx```
-* If applicable, provide instructions to create the Python virtual environment, and installing the packages using ```requirement.txt```.
-* If applicable, provide instructions to capture the deployed resource ARN or ID using the CLI command (recommended), or console action.
-
- 
-**Example:**
-
-1. Clone the repo using command ```git clone xxxxxxxxxx```
-2. cd to the repo folder ```cd <repo-name>```
-3. Install packages in requirements using command ```pip install requirement.txt```
-4. Edit content of **file-name** and replace **s3-bucket** with the bucket name in your account.
-5. Run this command to deploy the stack ```cdk deploy``` 
-6. Capture the domain name created by running this CLI command ```aws apigateway ............```
-
-
-
-## Deployment Validation  (required)
-
-<Provide steps to validate a successful deployment, such as terminal output, verifying that the resource is created, status of the CloudFormation template, etc.>
-
-
-**Examples:**
-
-* Open CloudFormation console and verify the status of the template with the name starting with xxxxxx.
-* If deployment is successful, you should see an active database instance with the name starting with <xxxxx> in        the RDS console.
-*  Run the following CLI command to validate the deployment: ```aws cloudformation describe xxxxxxxxxxxxx```
-
-
-
-## Running the Guidance (required)
-
-<Provide instructions to run the Guidance with the sample data or input provided, and interpret the output received.> 
-
-This section should include:
-
-* Guidance inputs
-* Commands to run
-* Expected output (provide screenshot if possible)
-* Output description
-
-
-
-## Next Steps (required)
-
-Provide suggestions and recommendations about how customers can modify the parameters and the components of the Guidance to further enhance it according to their requirements.
-
-
-## Cleanup (required)
-
-- Include detailed instructions, commands, and console actions to delete the deployed Guidance.
-- If the Guidance requires manual deletion of resources, such as the content of an S3 bucket, please specify.
-
-
-
-## FAQ, known issues, additional considerations, and limitations (optional)
-
-
-**Known issues (optional)**
-
-<If there are common known issues, or errors that can occur during the Guidance deployment, describe the issue and resolution steps here>
-
-
-**Additional considerations (if applicable)**
-
-<Include considerations the customer must know while using the Guidance, such as anti-patterns, or billing considerations.>
-
-**Examples:**
-
-- “This Guidance creates a public AWS bucket required for the use-case.”
-- “This Guidance created an Amazon SageMaker notebook that is billed per hour irrespective of usage.”
-- “This Guidance creates unauthenticated public API endpoints.”
-
-
-Provide a link to the *GitHub issues page* for users to provide feedback.
-
-
-**Example:** *“For any feedback, questions, or suggestions, please use the issues tab under this repo.”*
-
-## Revisions (optional)
-
-Document all notable changes to this project.
-
-Consider formatting this section based on Keep a Changelog, and adhering to Semantic Versioning.
-
-## Notices ( required )
-
-Include below mandatory legal disclaimer for Guidance
-
-*Customers are responsible for making their own independent assessment of the information in this Guidance. This Guidance: (a) is for informational purposes only, (b) represents AWS current product offerings and practices, which are subject to change without notice, and (c) does not create any commitments or assurances from AWS and its affiliates, suppliers or licensors. AWS products or services are provided “as is” without warranties, representations, or conditions of any kind, whether express or implied. AWS responsibilities and liabilities to its customers are controlled by AWS agreements, and this Guidance is not part of, nor does it modify, any agreement between AWS and its customers.*
-
-
-## Authors (optional)
-
-Name of code contributors
+| AWS Service | Dimensions | Cost [USD] |
+| ----------- | ---------- | ---------- |
+| OpenSearch Serverless | 2 OCU minimum (indexing + search) | ~$350/month |
+| Amazon Personalize | 1 campaign (1 TPS min provisioned) | ~$25/month |
+| Amazon Bedrock (inference) | ~1,000 agent invocations/month (Claude Sonnet) | ~$15/month |
+| Amazon Bedrock (Knowledge Base) | 200 documents indexed, ~500 queries/month | ~$5/month |
+| Bedrock AgentCore Runtime | 1 agent runtime | ~$10/month |
+| Amazon DynamoDB | On-demand, <1GB storage | ~$1/month |
+| AWS Lambda | ~10,000 invocations/month | ~$0.50/month |
+| Amazon CloudFront + S3 | Static site + product images (~600MB) | ~$3/month |
+| Amazon Cognito | <100 active users | $0.00 |
+| API Gateway (HTTP + WebSocket) | ~10,000 requests/month | ~$1/month |
+| AWS WAF | 1 Web ACL | ~$5/month |
+| AWS KMS | 1 key + ~1,000 requests/month | ~$1/month |
+
+## Prerequisites
+
+### Operating System
+
+These deployment instructions are optimized for **macOS** or **Amazon Linux 2023**. Deployment on Windows may require additional steps (e.g., using WSL2).
+
+Required tools:
+- Node.js >= 18 (`node --version`)
+- Python >= 3.11 (`python3 --version`)
+- AWS CLI v2 (`aws --version`)
+- AWS CDK CLI (`npm install -g aws-cdk`)
+- Docker (for building the agent container)
+
+### AWS Account Requirements
+
+- Amazon Bedrock model access enabled for:
+  - `anthropic.claude-sonnet-4-20250514-v1:0` (or cross-region `us.anthropic.claude-sonnet-4-20250514-v1:0`)
+  - `amazon.titan-embed-text-v2:0`
+- Sufficient service quotas for Amazon Personalize, OpenSearch Serverless, and Bedrock AgentCore
+- IAM permissions to create all resources in the stack
+
+### aws cdk bootstrap
+
+If you are using AWS CDK for the first time in your account/region, run:
+
+```bash
+cdk bootstrap aws://<ACCOUNT_ID>/us-east-1
+```
+
+### Service Limits
+
+- Amazon Personalize: Default limits support this deployment
+- OpenSearch Serverless: Minimum 2 OCUs required (default limit is sufficient)
+- Bedrock AgentCore: 1 runtime per deployment
+
+### Supported Regions
+
+This Guidance is designed for deployment in **US East (N. Virginia) - us-east-1**. Amazon Bedrock AgentCore, Amazon Personalize, and OpenSearch Serverless availability may vary by region.
+
+## Deployment Steps
+
+### Option A: One-Click Deploy (Recommended)
+
+1. Clone the repository:
+```bash
+git clone https://github.com/aws-solutions-library-samples/guidance-for-retail-hyper-personalization-on-aws.git
+cd guidance-for-retail-hyper-personalization-on-aws
+```
+
+2. Run the deployment script:
+```bash
+chmod +x deployment/deploy.sh
+./deployment/deploy.sh
+```
+
+This script handles all steps: installing dependencies, building the web app, deploying infrastructure, uploading data, and starting Personalize training.
+
+### Option B: Step-by-Step Deploy
+
+1. Clone the repository:
+```bash
+git clone https://github.com/aws-solutions-library-samples/guidance-for-retail-hyper-personalization-on-aws.git
+cd guidance-for-retail-hyper-personalization-on-aws/source
+```
+
+2. Install dependencies:
+```bash
+npm install --prefix web-app
+npm install --prefix deploy
+npm install --prefix js-lambdas
+pip install boto3
+```
+
+3. Build the JWT Lambda layer:
+```bash
+bash js-layers/jwt-layer/build.sh
+```
+
+4. Build the web application:
+```bash
+npm run build --prefix web-app
+```
+
+5. Deploy the infrastructure:
+```bash
+cd deploy
+npx cdk deploy --all --require-approval=never
+cd ..
+```
+
+6. Run post-deploy setup (upload images, seed database, sync Knowledge Base):
+```bash
+bash scripts/post-deploy.sh
+```
+
+7. Set up Amazon Personalize (import data and train model):
+```bash
+python3 scripts/setup_personalize.py --region us-east-1
+```
+
+8. Wait for Personalize training to complete (~1-2 hours), then create the campaign:
+```bash
+python3 scripts/setup_personalize.py --region us-east-1 --skip-import --skip-training
+```
+
+9. Create a Cognito user for testing:
+```bash
+aws cognito-idp admin-create-user \
+    --user-pool-id <USER_POOL_ID> \
+    --username demo \
+    --temporary-password 'TempPass123!' \
+    --region us-east-1
+```
+
+**Note:** Sample product data (catalog, images, and training datasets) is pre-included in the repository under `source/data-generation/`. To regenerate with different products, see `source/data-generation/README.md`.
+
+## Deployment Validation
+
+- Open the AWS CloudFormation console and verify the stacks `retail-personalization-on-aws` and `retail-personalization-on-aws-waf` show status `CREATE_COMPLETE`
+- Verify the CloudFront distribution URL is accessible (check stack outputs)
+- Run the following to confirm all resources:
+```bash
+aws cloudformation describe-stacks --stack-name retail-personalization-on-aws --region us-east-1 --query "Stacks[0].StackStatus"
+```
+Expected output: `"CREATE_COMPLETE"`
+
+## Running the Guidance
+
+1. Open the CloudFront URL from the stack outputs in your browser
+2. Sign in with the Cognito user credentials (you'll be prompted to set a new password on first login)
+3. Browse the storefront — the "Recommended for You" section shows personalized products from Amazon Personalize
+4. Click on a product to see the detail page with "You May Also Like" recommendations
+5. Click the chat bubble (bottom-right) to open the AI Shopping Assistant
+6. Ask questions like:
+   - "I'm looking for a mid-century modern bookshelf"
+   - "What do you recommend for a cozy reading corner?"
+   - "Show me dining tables under $1,500"
+   - "I need warm lighting for my bedroom"
+
+The assistant will search the product catalog semantically, provide personalized recommendations, and show clickable product cards with images.
+
+## Next Steps
+
+- **Add real product data:** Replace the generated sample catalog with your actual product inventory
+- **Enable real-time streaming:** Add Amazon Kinesis Data Streams for omnichannel event ingestion (as described in the full guidance architecture)
+- **Add MLOps automation:** Implement AWS Step Functions workflows for automated Personalize model retraining
+- **Integrate marketing campaigns:** Connect Amazon Pinpoint for personalized email/SMS campaigns with Bedrock-generated content
+- **Scale for production:** Enable DynamoDB DAX for microsecond caching, configure Personalize auto-scaling, and add Bedrock Provisioned Throughput
+
+## Cleanup
+
+1. Destroy the CDK stacks:
+```bash
+cd source/deploy
+npx cdk destroy --all --force
+cd ../..
+```
+
+2. The following resources are automatically deleted:
+   - All S3 buckets (with `autoDeleteObjects: true`)
+   - DynamoDB tables
+   - OpenSearch Serverless collection
+   - Cognito user pool
+   - All Lambda functions and API endpoints
+
+3. Manually delete (if needed):
+   - Amazon Personalize dataset group, solutions, and campaigns (these are not managed by CDK):
+```bash
+# Delete campaign first, then solution version, then solution, then datasets, then dataset group
+aws personalize delete-campaign --campaign-arn <CAMPAIGN_ARN> --region us-east-1
+```
+
+## Notices
+
+*Customers are responsible for making their own independent assessment of the information in this Guidance. This Guidance: (a) is for informational purposes only, (b) represents AWS current product offerings and practices, which are subject to change without notice, and (c) does not create any commitments or assurances from AWS and its affiliates, suppliers or licensors. AWS products or services are provided "as is" without warranties, representations, or conditions of any kind, whether express or implied. AWS responsibilities and liabilities to its customers are controlled by AWS agreements, and this Guidance is not part of, nor does it modify, any agreement between AWS and its customers.*
+
+## Repository Structure
+
+```
+assets/                          — Architecture diagrams and images
+deployment/
+  deploy.sh                      — One-click deployment script
+source/
+  agent/                         — Python AI Shopping Assistant (Bedrock AgentCore + Strands Agents)
+  deploy/                        — AWS CDK infrastructure (TypeScript)
+  js-lambdas/                    — Lambda functions (recommendations API, events API, WebSocket chat)
+  js-layers/                     — Lambda layers (JWT verification)
+  web-app/                       — React storefront (Vite + Tailwind CSS)
+  data-generation/               — Pipeline to generate sample product catalog and training data
+  scripts/                       — Post-deploy setup scripts
+  package.json                   — Root build orchestration
+```
+
+## Authors
+
+- AWS Solutions Architecture Team

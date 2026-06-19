@@ -1,0 +1,810 @@
+{
+  "results": {
+    "PROD-001": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-001-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-001-studio.png"
+    },
+    "PROD-002": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-002-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-002-studio.png"
+    },
+    "PROD-003": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-003-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-003-studio.png"
+    },
+    "PROD-004": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-004-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-004-studio.png"
+    },
+    "PROD-005": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-005-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-005-studio.png"
+    },
+    "PROD-006": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-006-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-006-studio.png"
+    },
+    "PROD-007": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-007-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-007-studio.png"
+    },
+    "PROD-008": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-008-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-008-studio.png"
+    },
+    "PROD-009": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-009-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-009-studio.png"
+    },
+    "PROD-010": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-010-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-010-studio.png"
+    },
+    "PROD-011": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-011-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-011-studio.png"
+    },
+    "PROD-012": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-012-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-012-studio.png"
+    },
+    "PROD-013": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-013-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-013-studio.png"
+    },
+    "PROD-014": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-014-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-014-studio.png"
+    },
+    "PROD-015": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-015-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-015-studio.png"
+    },
+    "PROD-016": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-016-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-016-studio.png"
+    },
+    "PROD-017": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-017-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-017-studio.png"
+    },
+    "PROD-018": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-018-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-018-studio.png"
+    },
+    "PROD-019": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-019-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-019-studio.png"
+    },
+    "PROD-020": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-020-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-020-studio.png"
+    },
+    "PROD-021": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-021-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-021-studio.png"
+    },
+    "PROD-022": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-022-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-022-studio.png"
+    },
+    "PROD-023": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-023-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-023-studio.png"
+    },
+    "PROD-024": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-024-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-024-studio.png"
+    },
+    "PROD-025": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-025-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-025-studio.png"
+    },
+    "PROD-026": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-026-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-026-studio.png"
+    },
+    "PROD-027": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-027-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-027-studio.png"
+    },
+    "PROD-028": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-028-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-028-studio.png"
+    },
+    "PROD-029": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-029-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-029-studio.png"
+    },
+    "PROD-030": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-030-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-030-studio.png"
+    },
+    "PROD-031": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-031-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-031-studio.png"
+    },
+    "PROD-032": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-032-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-032-studio.png"
+    },
+    "PROD-033": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-033-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-033-studio.png"
+    },
+    "PROD-034": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-034-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-034-studio.png"
+    },
+    "PROD-035": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-035-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-035-studio.png"
+    },
+    "PROD-036": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-036-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-036-studio.png"
+    },
+    "PROD-037": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-037-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-037-studio.png"
+    },
+    "PROD-038": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-038-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-038-studio.png"
+    },
+    "PROD-039": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-039-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-039-studio.png"
+    },
+    "PROD-040": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-040-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-040-studio.png"
+    },
+    "PROD-041": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-041-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-041-studio.png"
+    },
+    "PROD-042": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-042-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-042-studio.png"
+    },
+    "PROD-043": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-043-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-043-studio.png"
+    },
+    "PROD-044": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-044-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-044-studio.png"
+    },
+    "PROD-045": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-045-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-045-studio.png"
+    },
+    "PROD-046": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-046-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-046-studio.png"
+    },
+    "PROD-047": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-047-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-047-studio.png"
+    },
+    "PROD-048": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-048-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-048-studio.png"
+    },
+    "PROD-049": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-049-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-049-studio.png"
+    },
+    "PROD-050": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-050-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-050-studio.png"
+    },
+    "PROD-051": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-051-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-051-studio.png"
+    },
+    "PROD-052": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-052-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-052-studio.png"
+    },
+    "PROD-053": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-053-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-053-studio.png"
+    },
+    "PROD-054": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-054-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-054-studio.png"
+    },
+    "PROD-055": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-055-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-055-studio.png"
+    },
+    "PROD-056": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-056-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-056-studio.png"
+    },
+    "PROD-057": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-057-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-057-studio.png"
+    },
+    "PROD-058": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-058-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-058-studio.png"
+    },
+    "PROD-059": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-059-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-059-studio.png"
+    },
+    "PROD-060": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-060-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-060-studio.png"
+    },
+    "PROD-061": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-061-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-061-studio.png"
+    },
+    "PROD-062": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-062-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-062-studio.png"
+    },
+    "PROD-063": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-063-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-063-studio.png"
+    },
+    "PROD-064": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-064-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-064-studio.png"
+    },
+    "PROD-065": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-065-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-065-studio.png"
+    },
+    "PROD-066": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-066-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-066-studio.png"
+    },
+    "PROD-067": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-067-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-067-studio.png"
+    },
+    "PROD-068": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-068-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-068-studio.png"
+    },
+    "PROD-069": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-069-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-069-studio.png"
+    },
+    "PROD-070": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-070-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-070-studio.png"
+    },
+    "PROD-071": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-071-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-071-studio.png"
+    },
+    "PROD-072": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-072-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-072-studio.png"
+    },
+    "PROD-073": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-073-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-073-studio.png"
+    },
+    "PROD-074": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-074-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-074-studio.png"
+    },
+    "PROD-075": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-075-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-075-studio.png"
+    },
+    "PROD-076": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-076-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-076-studio.png"
+    },
+    "PROD-077": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-077-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-077-studio.png"
+    },
+    "PROD-078": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-078-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-078-studio.png"
+    },
+    "PROD-079": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-079-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-079-studio.png"
+    },
+    "PROD-080": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-080-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-080-studio.png"
+    },
+    "PROD-081": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-081-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-081-studio.png"
+    },
+    "PROD-082": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-082-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-082-studio.png"
+    },
+    "PROD-083": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-083-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-083-studio.png"
+    },
+    "PROD-084": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-084-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-084-studio.png"
+    },
+    "PROD-085": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-085-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-085-studio.png"
+    },
+    "PROD-086": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-086-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-086-studio.png"
+    },
+    "PROD-087": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-087-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-087-studio.png"
+    },
+    "PROD-088": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-088-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-088-studio.png"
+    },
+    "PROD-089": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-089-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-089-studio.png"
+    },
+    "PROD-090": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-090-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-090-studio.png"
+    },
+    "PROD-091": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-091-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-091-studio.png"
+    },
+    "PROD-092": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-092-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-092-studio.png"
+    },
+    "PROD-093": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-093-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-093-studio.png"
+    },
+    "PROD-094": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-094-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-094-studio.png"
+    },
+    "PROD-095": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-095-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-095-studio.png"
+    },
+    "PROD-096": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-096-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-096-studio.png"
+    },
+    "PROD-097": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-097-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-097-studio.png"
+    },
+    "PROD-098": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-098-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-098-studio.png"
+    },
+    "PROD-099": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-099-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-099-studio.png"
+    },
+    "PROD-100": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-100-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-100-studio.png"
+    },
+    "PROD-101": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-101-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-101-studio.png"
+    },
+    "PROD-102": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-102-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-102-studio.png"
+    },
+    "PROD-103": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-103-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-103-studio.png"
+    },
+    "PROD-104": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-104-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-104-studio.png"
+    },
+    "PROD-105": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-105-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-105-studio.png"
+    },
+    "PROD-106": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-106-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-106-studio.png"
+    },
+    "PROD-107": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-107-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-107-studio.png"
+    },
+    "PROD-108": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-108-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-108-studio.png"
+    },
+    "PROD-109": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-109-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-109-studio.png"
+    },
+    "PROD-110": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-110-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-110-studio.png"
+    },
+    "PROD-111": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-111-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-111-studio.png"
+    },
+    "PROD-112": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-112-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-112-studio.png"
+    },
+    "PROD-113": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-113-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-113-studio.png"
+    },
+    "PROD-114": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-114-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-114-studio.png"
+    },
+    "PROD-115": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-115-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-115-studio.png"
+    },
+    "PROD-116": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-116-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-116-studio.png"
+    },
+    "PROD-117": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-117-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-117-studio.png"
+    },
+    "PROD-118": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-118-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-118-studio.png"
+    },
+    "PROD-119": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-119-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-119-studio.png"
+    },
+    "PROD-120": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-120-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-120-studio.png"
+    },
+    "PROD-121": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-121-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-121-studio.png"
+    },
+    "PROD-122": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-122-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-122-studio.png"
+    },
+    "PROD-123": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-123-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-123-studio.png"
+    },
+    "PROD-124": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-124-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-124-studio.png"
+    },
+    "PROD-125": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-125-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-125-studio.png"
+    },
+    "PROD-126": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-126-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-126-studio.png"
+    },
+    "PROD-127": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-127-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-127-studio.png"
+    },
+    "PROD-128": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-128-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-128-studio.png"
+    },
+    "PROD-129": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-129-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-129-studio.png"
+    },
+    "PROD-130": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-130-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-130-studio.png"
+    },
+    "PROD-131": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-131-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-131-studio.png"
+    },
+    "PROD-132": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-132-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-132-studio.png"
+    },
+    "PROD-133": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-133-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-133-studio.png"
+    },
+    "PROD-134": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-134-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-134-studio.png"
+    },
+    "PROD-135": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-135-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-135-studio.png"
+    },
+    "PROD-136": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-136-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-136-studio.png"
+    },
+    "PROD-137": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-137-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-137-studio.png"
+    },
+    "PROD-138": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-138-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-138-studio.png"
+    },
+    "PROD-139": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-139-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-139-studio.png"
+    },
+    "PROD-140": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-140-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-140-studio.png"
+    },
+    "PROD-141": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-141-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-141-studio.png"
+    },
+    "PROD-142": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-142-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-142-studio.png"
+    },
+    "PROD-143": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-143-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-143-studio.png"
+    },
+    "PROD-144": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-144-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-144-studio.png"
+    },
+    "PROD-145": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-145-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-145-studio.png"
+    },
+    "PROD-146": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-146-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-146-studio.png"
+    },
+    "PROD-147": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-147-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-147-studio.png"
+    },
+    "PROD-148": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-148-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-148-studio.png"
+    },
+    "PROD-149": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-149-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-149-studio.png"
+    },
+    "PROD-150": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-150-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-150-studio.png"
+    },
+    "PROD-151": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-151-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-151-studio.png"
+    },
+    "PROD-152": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-152-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-152-studio.png"
+    },
+    "PROD-153": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-153-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-153-studio.png"
+    },
+    "PROD-154": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-154-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-154-studio.png"
+    },
+    "PROD-155": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-155-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-155-studio.png"
+    },
+    "PROD-156": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-156-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-156-studio.png"
+    },
+    "PROD-157": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-157-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-157-studio.png"
+    },
+    "PROD-158": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-158-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-158-studio.png"
+    },
+    "PROD-159": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-159-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-159-studio.png"
+    },
+    "PROD-160": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-160-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-160-studio.png"
+    },
+    "PROD-161": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-161-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-161-studio.png"
+    },
+    "PROD-162": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-162-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-162-studio.png"
+    },
+    "PROD-163": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-163-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-163-studio.png"
+    },
+    "PROD-164": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-164-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-164-studio.png"
+    },
+    "PROD-165": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-165-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-165-studio.png"
+    },
+    "PROD-166": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-166-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-166-studio.png"
+    },
+    "PROD-167": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-167-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-167-studio.png"
+    },
+    "PROD-168": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-168-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-168-studio.png"
+    },
+    "PROD-169": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-169-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-169-studio.png"
+    },
+    "PROD-170": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-170-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-170-studio.png"
+    },
+    "PROD-171": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-171-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-171-studio.png"
+    },
+    "PROD-172": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-172-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-172-studio.png"
+    },
+    "PROD-173": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-173-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-173-studio.png"
+    },
+    "PROD-174": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-174-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-174-studio.png"
+    },
+    "PROD-175": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-175-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-175-studio.png"
+    },
+    "PROD-176": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-176-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-176-studio.png"
+    },
+    "PROD-177": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-177-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-177-studio.png"
+    },
+    "PROD-178": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-178-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-178-studio.png"
+    },
+    "PROD-179": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-179-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-179-studio.png"
+    },
+    "PROD-180": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-180-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-180-studio.png"
+    },
+    "PROD-181": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-181-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-181-studio.png"
+    },
+    "PROD-182": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-182-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-182-studio.png"
+    },
+    "PROD-183": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-183-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-183-studio.png"
+    },
+    "PROD-184": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-184-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-184-studio.png"
+    },
+    "PROD-185": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-185-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-185-studio.png"
+    },
+    "PROD-186": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-186-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-186-studio.png"
+    },
+    "PROD-187": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-187-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-187-studio.png"
+    },
+    "PROD-188": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-188-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-188-studio.png"
+    },
+    "PROD-189": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-189-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-189-studio.png"
+    },
+    "PROD-190": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-190-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-190-studio.png"
+    },
+    "PROD-191": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-191-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-191-studio.png"
+    },
+    "PROD-192": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-192-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-192-studio.png"
+    },
+    "PROD-193": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-193-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-193-studio.png"
+    },
+    "PROD-194": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-194-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-194-studio.png"
+    },
+    "PROD-195": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-195-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-195-studio.png"
+    },
+    "PROD-196": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-196-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-196-studio.png"
+    },
+    "PROD-197": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-197-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-197-studio.png"
+    },
+    "PROD-198": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-198-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-198-studio.png"
+    },
+    "PROD-199": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-199-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-199-studio.png"
+    },
+    "PROD-200": {
+      "lifestyle": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-200-lifestyle.png",
+      "studio": "/Users/reibjok/Desktop/guidance-for-retail-personalization/data-generation/images/prod-200-studio.png"
+    }
+  },
+  "stats": {
+    "total_attempted": 400,
+    "generated": 200,
+    "skipped": 200,
+    "failed": 0
+  }
+}

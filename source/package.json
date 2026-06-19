@@ -1,0 +1,19 @@
+{
+    "name": "bt-ddops-mips-prototype",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "install:all": "npm install --prefix web-app && npm install --prefix deploy",
+        "build:web": "npm run build --prefix web-app",
+        "build:deploy": "npm run build --prefix deploy",
+        "build:layer": "bash js-layers/jwt-layer/build.sh",
+        "build": "npm run build:web && npm run build:deploy",
+        "deploy": "npm run build:layer && npm run build:web && npm run deploy --prefix deploy",
+        "destroy": "npm run destroy --prefix deploy",
+        "dev": "npm run dev --prefix web-app",
+        "synth": "npm run synth --prefix deploy"
+    },
+    "engines": {
+        "node": ">=18"
+    }
+}

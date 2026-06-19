@@ -1,0 +1,201 @@
+ITEM_ID,CATEGORY,STYLE,PRICE,MATERIAL,ROOM_TYPE,COLOR
+PROD-001,Sofas & Seating|Sofas,Scandinavian,2899.0,linen,Living Room,Natural Oak
+PROD-002,Sofas & Seating|Sofas,Contemporary,4200.0,bouclé,Living Room,Cream
+PROD-003,Sofas & Seating|Sofas,Mid-Century Modern,1899.0,velvet,Living Room|Bedroom,Sage Green
+PROD-004,Sofas & Seating|Sofas,Minimalist,3450.0,wool blend,Living Room,Warm Grey
+PROD-005,Sofas & Seating|Armchairs,Contemporary,1299.0,leather,Living Room|Home Office,Cognac
+PROD-006,Sofas & Seating|Armchairs,Scandinavian,899.0,bouclé,Living Room|Bedroom,Off-White
+PROD-007,Sofas & Seating|Armchairs,Mid-Century Modern,1149.0,velvet,Living Room|Home Office,Dusty Blue
+PROD-008,Sofas & Seating|Armchairs,Contemporary,1599.0,linen,Living Room|Home Office,Charcoal
+PROD-009,Sofas & Seating|Armchairs,Minimalist,799.0,wool blend,Living Room|Bedroom,Oatmeal
+PROD-010,Sofas & Seating|Dining Chairs,Scandinavian,449.0,leather,Dining Room,Natural Oak
+PROD-011,Sofas & Seating|Dining Chairs,Mid-Century Modern,399.0,linen,Dining Room|Home Office,Forest Green
+PROD-012,Sofas & Seating|Dining Chairs,Contemporary,529.0,velvet,Dining Room,Navy
+PROD-013,Sofas & Seating|Dining Chairs,Minimalist,299.0,wool blend,Dining Room|Kitchen,Sand
+PROD-014,Sofas & Seating|Dining Chairs,Contemporary,649.0,leather,Kitchen|Dining Room,Matte Black
+PROD-015,Sofas & Seating|Benches,Scandinavian,899.0,linen,Dining Room,Ivory
+PROD-016,Sofas & Seating|Benches,Mid-Century Modern,749.0,bouclé,Hallway,Rust
+PROD-017,Sofas & Seating|Benches,Minimalist,599.0,velvet,Bedroom,Blush Pink
+PROD-018,Sofas & Seating|Benches,Contemporary,1099.0,wool blend,Bedroom|Living Room,Terracotta
+PROD-019,Sofas & Seating|Benches,Scandinavian,849.0,linen,Living Room|Bedroom,Slate
+PROD-020,Sofas & Seating|Benches,Mid-Century Modern,699.0,leather,Living Room,Walnut
+PROD-021,Sofas & Seating|Sofas,Scandinavian,2899.0,linen,Living Room,Oatmeal
+PROD-022,Sofas & Seating|Sofas,Contemporary,4299.0,bouclé,Living Room,Cream
+PROD-023,Sofas & Seating|Sofas,Minimalist,1899.0,velvet,Living Room|Home Office,Sage Green
+PROD-024,Sofas & Seating|Sofas,Mid-Century Modern,2199.0,leather,Living Room|Home Office,Cognac
+PROD-025,Sofas & Seating|Armchairs,Scandinavian,1299.0,wool blend,Living Room|Bedroom,Charcoal
+PROD-026,Sofas & Seating|Armchairs,Contemporary,899.0,bouclé,Living Room|Bedroom,Dusty Blue
+PROD-027,Sofas & Seating|Armchairs,Mid-Century Modern,1599.0,leather,Home Office|Living Room,Warm Grey
+PROD-028,Sofas & Seating|Armchairs,Minimalist,799.0,linen,Bedroom|Home Office,Off-White
+PROD-029,Sofas & Seating|Dining Chairs,Scandinavian,599.0,linen,Dining Room,Natural Oak
+PROD-030,Sofas & Seating|Dining Chairs,Contemporary,399.0,velvet,Dining Room,Forest Green
+PROD-031,Sofas & Seating|Dining Chairs,Mid-Century Modern,749.0,leather,Dining Room|Home Office,Matte Black
+PROD-032,Sofas & Seating|Dining Chairs,Minimalist,299.0,wool blend,Dining Room,Sand
+PROD-033,Sofas & Seating|Benches,Scandinavian,649.0,linen,Hallway,Cream
+PROD-034,Sofas & Seating|Benches,Contemporary,899.0,bouclé,Dining Room,Terracotta
+PROD-035,Sofas & Seating|Benches,Minimalist,549.0,velvet,Bedroom|Living Room,Blush Pink
+PROD-036,Tables|Coffee Tables,Scandinavian,899.0,solid oak,Living Room,Natural Oak
+PROD-037,Tables|Dining Tables,Mid-Century Modern,2899.0,walnut,Dining Room,Walnut
+PROD-038,Tables|Side Tables,Minimalist,449.0,marble,Living Room|Bedroom,Off-White
+PROD-039,Tables|Desks,Scandinavian,1299.0,ash wood,Home Office,Natural Oak
+PROD-040,Tables|Coffee Tables,Contemporary,699.0,glass,Living Room,Warm Grey
+PROD-041,Tables|Dining Tables,Scandinavian,2199.0,solid oak,Dining Room,Natural Oak
+PROD-042,Tables|Side Tables,Japandi,399.0,walnut,Bedroom,Walnut
+PROD-043,Tables|Desks,Industrial,899.0,ash wood,Home Office,Charcoal
+PROD-044,Tables|Coffee Tables,Minimalist,1299.0,travertine,Living Room,Cream
+PROD-045,Tables|Dining Tables,Contemporary,3199.0,walnut,Dining Room,Walnut
+PROD-046,Tables|Side Tables,Organic Modern,329.0,solid oak,Living Room|Hallway,Natural Oak
+PROD-047,Tables|Desks,Minimalist,799.0,glass,Home Office,Matte Black
+PROD-048,Tables|Coffee Tables,Mid-Century Modern,1099.0,walnut,Living Room,Walnut
+PROD-049,Tables|Dining Tables,Scandinavian,1899.0,solid oak,Dining Room,Natural Oak
+PROD-050,Tables|Side Tables,Contemporary,649.0,marble,Living Room|Bedroom,Sage Green
+PROD-051,Tables|Desks,Industrial,1599.0,ash wood,Home Office,Charcoal
+PROD-052,Tables|Coffee Tables,Japandi,899.0,glass,Living Room,Off-White
+PROD-053,Tables|Dining Tables,Minimalist,1299.0,walnut,Dining Room|Kitchen,Walnut
+PROD-054,Tables|Side Tables,Organic Modern,799.0,ash wood,Hallway|Living Room,Sand
+PROD-055,Tables|Desks,Mid-Century Modern,1799.0,walnut,Home Office|Bedroom,Walnut
+PROD-056,Tables|Coffee Tables,Scandinavian,899.0,solid oak,Living Room,Natural Oak
+PROD-057,Tables|Dining Tables,Mid-Century Modern,2299.0,walnut,Dining Room,Walnut
+PROD-058,Tables|Side Tables,Minimalist,349.0,ash wood,Living Room|Bedroom,Off-White
+PROD-059,Tables|Desks,Industrial,1299.0,solid oak,Home Office,Charcoal
+PROD-060,Tables|Coffee Tables,Japandi,649.0,ash wood,Living Room,Warm Grey
+PROD-061,Tables|Dining Tables,Scandinavian,1899.0,solid oak,Dining Room,Natural Oak
+PROD-062,Tables|Side Tables,Mid-Century Modern,599.0,marble,Living Room|Bedroom,Cream
+PROD-063,Tables|Desks,Minimalist,799.0,ash wood,Home Office|Bedroom,Off-White
+PROD-064,Tables|Coffee Tables,Industrial,1299.0,travertine,Living Room,Sand
+PROD-065,Tables|Dining Tables,Japandi,2799.0,solid oak,Dining Room,Natural Oak
+PROD-066,Tables|Side Tables,Scandinavian,299.0,ash wood,Living Room|Bedroom,Sage Green
+PROD-067,Tables|Desks,Mid-Century Modern,1599.0,walnut,Home Office,Walnut
+PROD-068,Tables|Coffee Tables,Japandi,749.0,solid oak,Living Room,Oatmeal
+PROD-069,Tables|Dining Tables,Industrial,1699.0,glass,Dining Room,Matte Black
+PROD-070,Tables|Side Tables,Minimalist,449.0,marble,Living Room|Hallway,Ivory
+PROD-071,Lighting|Floor Lamps,Mid-Century Modern,489.0,brass,Living Room|Bedroom,Brass
+PROD-072,Lighting|Table Lamps,Scandinavian,189.0,ceramic,Bedroom|Living Room,Sage Green
+PROD-073,Lighting|Pendant Lights,Minimalist,329.0,opal glass,Dining Room|Kitchen,Off-White
+PROD-074,Lighting|Wall Sconces,Art Deco,259.0,brass,Hallway|Living Room,Brass
+PROD-075,Lighting|Floor Lamps,Scandinavian,379.0,linen shade,Living Room|Bedroom,Natural Oak
+PROD-076,Lighting|Table Lamps,Japandi,225.0,ceramic,Bedroom|Home Office,Warm Grey
+PROD-077,Lighting|Pendant Lights,Mid-Century Modern,445.0,opal glass,Dining Room|Living Room,Brass
+PROD-078,Lighting|Wall Sconces,Minimalist,179.0,matte black metal,Home Office|Hallway,Matte Black
+PROD-079,Lighting|Floor Lamps,Scandinavian,299.0,rattan,Living Room|Bedroom,Natural Oak
+PROD-080,Lighting|Table Lamps,Art Deco,349.0,brass,Living Room|Bedroom,Brass
+PROD-081,Lighting|Pendant Lights,Scandinavian,589.0,opal glass,Dining Room|Living Room,Off-White
+PROD-082,Lighting|Wall Sconces,Japandi,199.0,ceramic,Bedroom|Bathroom,Cream
+PROD-083,Lighting|Floor Lamps,Mid-Century Modern,429.0,matte black metal,Living Room|Home Office,Matte Black
+PROD-084,Lighting|Table Lamps,Minimalist,169.0,ceramic,Bedroom|Home Office,Dusty Blue
+PROD-085,Lighting|Pendant Lights,Art Deco,679.0,brass,Dining Room|Hallway,Brass
+PROD-086,Lighting|Wall Sconces,Scandinavian,149.0,opal glass,Bedroom|Bathroom,Off-White
+PROD-087,Lighting|Floor Lamps,Japandi,359.0,rattan,Living Room|Bedroom,Natural Oak
+PROD-088,Lighting|Table Lamps,Scandinavian,129.0,linen shade,Bedroom|Living Room,Oatmeal
+PROD-089,Lighting|Pendant Lights,Minimalist,389.0,opal glass,Kitchen|Dining Room,Off-White
+PROD-090,Lighting|Wall Sconces,Mid-Century Modern,219.0,brass,Hallway|Living Room,Brass
+PROD-091,Lighting|Floor Lamps,Mid-Century Modern,485.0,brass,Living Room|Bedroom,Brass
+PROD-092,Lighting|Table Lamps,Scandinavian,189.0,ceramic,Bedroom|Home Office,Off-White
+PROD-093,Lighting|Pendant Lights,Minimalist,329.0,opal glass,Dining Room|Kitchen,Off-White
+PROD-094,Lighting|Floor Lamps,Scandinavian,275.0,rattan,Living Room|Bedroom,Natural Oak
+PROD-095,Lighting|Table Lamps,Japandi,225.0,matte black metal,Home Office|Bedroom,Matte Black
+PROD-096,Lighting|Pendant Lights,Art Deco,890.0,brass,Dining Room|Hallway,Brass
+PROD-097,Lighting|Wall Sconces,Minimalist,145.0,matte black metal,Hallway|Bedroom,Matte Black
+PROD-098,Lighting|Table Lamps,Scandinavian,165.0,ceramic,Living Room|Bedroom,Terracotta
+PROD-099,Lighting|Wall Sconces,Mid-Century Modern,295.0,brass,Living Room|Home Office,Brass
+PROD-100,Lighting|Pendant Lights,Minimalist,425.0,matte black metal,Kitchen|Dining Room,Matte Black
+PROD-101,Storage|Bookshelves,Scandinavian,1299.0,solid oak,Living Room|Home Office,Natural Oak
+PROD-102,Storage|Cabinets,Contemporary,1899.0,fluted glass,Living Room|Dining Room,Charcoal
+PROD-103,Storage|Sideboards,Mid-Century Modern,2299.0,walnut,Dining Room|Living Room,Walnut
+PROD-104,Storage|TV Units,Contemporary,849.0,ash wood,Living Room,Charcoal
+PROD-105,Storage|Bookshelves,Minimalist,649.0,ash wood,Bedroom|Home Office,Off-White
+PROD-106,Storage|Cabinets,Scandinavian,1149.0,cane,Bedroom|Living Room,Natural Oak
+PROD-107,Storage|Sideboards,Contemporary,1799.0,solid oak,Dining Room|Living Room,Sage Green
+PROD-108,Storage|TV Units,Scandinavian,699.0,ash wood,Living Room|Bedroom,Warm Grey
+PROD-109,Storage|Bookshelves,Contemporary,1599.0,walnut,Home Office|Living Room,Walnut
+PROD-110,Storage|Cabinets,Minimalist,949.0,ash wood,Hallway|Dining Room,Sand
+PROD-111,Storage|Sideboards,Scandinavian,1699.0,solid oak,Living Room|Dining Room,Natural Oak
+PROD-112,Storage|TV Units,Mid-Century Modern,1299.0,walnut,Living Room,Charcoal
+PROD-113,Storage|Bookshelves,Contemporary,549.0,ash wood,Bedroom|Hallway,Sage Green
+PROD-114,Storage|Cabinets,Contemporary,1449.0,fluted glass,Living Room|Dining Room,Off-White
+PROD-115,Storage|Sideboards,Mid-Century Modern,2199.0,walnut,Dining Room|Living Room,Terracotta
+PROD-116,Storage|TV Units,Minimalist,449.0,ash wood,Bedroom|Living Room,Cream
+PROD-117,Storage|Bookshelves,Scandinavian,799.0,solid oak,Living Room|Home Office,Natural Oak
+PROD-118,Storage|Cabinets,Minimalist,849.0,cane,Bedroom|Bathroom,Dusty Blue
+PROD-119,Storage|Sideboards,Contemporary,1899.0,ash wood,Dining Room|Living Room,Rust
+PROD-120,Storage|TV Units,Scandinavian,1599.0,solid oak,Living Room,Natural Oak
+PROD-121,Storage|Bookshelves,Scandinavian,1249.0,solid oak,Living Room|Home Office,Natural Oak
+PROD-122,Storage|TV Units,Mid-Century Modern,1899.0,walnut,Living Room,Walnut
+PROD-123,Storage|Cabinets,Contemporary,2199.0,fluted glass,Living Room|Dining Room,Charcoal
+PROD-124,Storage|Bookshelves,Minimalist,649.0,ash wood,Bedroom|Home Office,Off-White
+PROD-125,Storage|Sideboards,Scandinavian,1649.0,solid oak,Dining Room|Living Room,Natural Oak
+PROD-126,Storage|TV Units,Contemporary,1299.0,walnut,Living Room|Bedroom,Walnut
+PROD-127,Storage|Cabinets,Mid-Century Modern,899.0,cane,Living Room|Hallway,Matte Black
+PROD-128,Storage|Bookshelves,Minimalist,549.0,ash wood,Home Office|Bedroom,Warm Grey
+PROD-129,Storage|Sideboards,Contemporary,2199.0,solid oak,Dining Room|Living Room,Sage Green
+PROD-130,Storage|TV Units,Scandinavian,1799.0,solid oak,Living Room,Natural Oak
+PROD-131,Beds & Bedroom|Bed Frames,Scandinavian,1299.0,solid oak,Bedroom,Natural Oak
+PROD-132,Beds & Bedroom|Bed Frames,Mid-Century Modern,1849.0,upholstered linen,Bedroom,Oatmeal
+PROD-133,Beds & Bedroom|Bed Frames,Japandi,1599.0,ash wood,Bedroom,Warm Grey
+PROD-134,Beds & Bedroom|Bed Frames,Mid-Century Modern,2199.0,walnut,Bedroom,Walnut
+PROD-135,Beds & Bedroom|Bed Frames,Scandinavian,1749.0,cane,Bedroom,Natural Oak
+PROD-136,Beds & Bedroom|Bed Frames,Minimalist,899.0,ash wood,Bedroom,Off-White
+PROD-137,Beds & Bedroom|Nightstands,Scandinavian,349.0,solid oak,Bedroom,Natural Oak
+PROD-138,Beds & Bedroom|Nightstands,Mid-Century Modern,459.0,walnut,Bedroom,Walnut
+PROD-139,Beds & Bedroom|Nightstands,Minimalist,289.0,ash wood,Bedroom,Off-White
+PROD-140,Beds & Bedroom|Nightstands,Japandi,399.0,cane,Bedroom,Natural Oak
+PROD-141,Beds & Bedroom|Nightstands,Scandinavian,419.0,upholstered linen,Bedroom,Sage Green
+PROD-142,Beds & Bedroom|Nightstands,Minimalist,229.0,ash wood,Bedroom,Charcoal
+PROD-143,Beds & Bedroom|Nightstands,Mid-Century Modern,549.0,walnut,Bedroom,Walnut
+PROD-144,Beds & Bedroom|Dressers,Scandinavian,1899.0,solid oak,Bedroom,Natural Oak
+PROD-145,Beds & Bedroom|Dressers,Mid-Century Modern,2299.0,walnut,Bedroom,Walnut
+PROD-146,Beds & Bedroom|Dressers,Minimalist,1649.0,ash wood,Bedroom,Off-White
+PROD-147,Beds & Bedroom|Dressers,Japandi,1999.0,cane,Bedroom,Natural Oak
+PROD-148,Beds & Bedroom|Dressers,Minimalist,1299.0,ash wood,Bedroom,Charcoal
+PROD-149,Beds & Bedroom|Dressers,Scandinavian,2599.0,solid oak,Bedroom,Natural Oak
+PROD-150,Beds & Bedroom|Dressers,Mid-Century Modern,1799.0,upholstered linen,Bedroom,Dusty Blue
+PROD-151,Beds & Bedroom|Bed Frames,Scandinavian,1899.0,solid oak,Bedroom,Natural Oak
+PROD-152,Beds & Bedroom|Nightstands,Japandi,349.0,ash wood,Bedroom,Warm Grey
+PROD-153,Beds & Bedroom|Bed Frames,Mid-Century Modern,2299.0,upholstered linen,Bedroom,Oatmeal
+PROD-154,Beds & Bedroom|Dressers,Minimalist,1649.0,walnut,Bedroom,Walnut
+PROD-155,Beds & Bedroom|Nightstands,Scandinavian,289.0,solid oak,Bedroom,Natural Oak
+PROD-156,Rugs & Textiles|Area Rugs,Scandinavian,849.0,Hand-woven wool,Living Room|Bedroom,Natural Oak
+PROD-157,Rugs & Textiles|Throws,Minimalist,189.0,Cashmere blend,Living Room|Bedroom,Sage Green
+PROD-158,Rugs & Textiles|Cushions,Japandi,45.0,Organic linen,Living Room|Bedroom,Oatmeal
+PROD-159,Rugs & Textiles|Area Rugs,Textural,156.0,Natural jute,Hallway|Living Room,Sand
+PROD-160,Rugs & Textiles|Throws,Scandinavian,145.0,Merino wool,Living Room|Bedroom,Warm Grey
+PROD-161,Rugs & Textiles|Cushions,Minimalist,78.0,Silk blend,Bedroom|Living Room,Dusty Blue
+PROD-162,Rugs & Textiles|Area Rugs,Bohemian,425.0,Cotton and jute blend,Living Room|Dining Room,Terracotta
+PROD-163,Rugs & Textiles|Throws,Textural,225.0,Mohair blend,Bedroom|Living Room,Blush Pink
+PROD-164,Rugs & Textiles|Cushions,Scandinavian,52.0,French linen,Living Room|Bedroom,Off-White
+PROD-165,Rugs & Textiles|Area Rugs,Japandi,312.0,Organic cotton,Living Room|Bedroom,Cream
+PROD-166,Rugs & Textiles|Throws,Minimalist,198.0,Alpaca wool,Living Room|Bedroom,Charcoal
+PROD-167,Rugs & Textiles|Cushions,Bohemian,68.0,Organic cotton velvet,Living Room|Bedroom,Forest Green
+PROD-168,Rugs & Textiles|Area Rugs,Textural,675.0,Loop-pile wool,Living Room|Dining Room,Ivory
+PROD-169,Rugs & Textiles|Throws,Japandi,215.0,Cashmere and wool blend,Living Room|Home Office,Navy
+PROD-170,Rugs & Textiles|Cushions,Textural,58.0,Belgian linen,Living Room|Bedroom,Rust
+PROD-171,Rugs & Textiles|Area Rugs,Bohemian,520.0,Flat-weave wool,Living Room|Dining Room,Slate
+PROD-172,Rugs & Textiles|Throws,Minimalist,89.0,Bamboo fiber blend,Bedroom|Living Room,Sage Green
+PROD-173,Rugs & Textiles|Cushions,Scandinavian,72.0,Wool bouclé,Living Room|Home Office,Cognac
+PROD-174,Rugs & Textiles|Area Rugs,Minimalist,189.0,Natural jute,Living Room|Dining Room,Natural Oak
+PROD-175,Rugs & Textiles|Cushions,Japandi,92.0,Pure silk,Bedroom|Living Room,Ivory
+PROD-176,Rugs & Textiles|Area Rugs,Scandinavian,485.0,Hand-tufted wool with subtle texture variations,Living Room|Bedroom,Warm Grey
+PROD-177,Rugs & Textiles|Throws,Minimalist,89.0,Stone-washed European linen,Living Room|Bedroom,Oatmeal
+PROD-178,Rugs & Textiles|Area Rugs,Textural,125.0,Natural jute with cotton border,Hallway|Kitchen,Natural Oak
+PROD-179,Rugs & Textiles|Cushions,Japandi,145.0,Organic cotton with silk blend piping,Living Room|Bedroom,Sage Green
+PROD-180,Rugs & Textiles|Throws,Bohemian,195.0,Hand-loomed wool with fringe detail,Living Room|Bedroom,Terracotta
+PROD-181,Decor & Accessories|Vases,Scandinavian,89.0,Hand-thrown ceramic with matte glaze,Living Room|Bedroom,Oatmeal
+PROD-182,Decor & Accessories|Vases,Minimalist,125.0,Hand-blown borosilicate glass,Dining Room|Living Room,Sage Green
+PROD-183,Decor & Accessories|Vases,Wabi-Sabi,42.0,Reactive glaze stoneware,Bedroom|Home Office,Forest Green
+PROD-184,Decor & Accessories|Vases,Organic Modern,198.0,Brushed brass with patina finish,Living Room|Dining Room,Brass
+PROD-185,Decor & Accessories|Vases,Japandi,165.0,Terrazzo with marble aggregate,Living Room|Home Office,Warm Grey
+PROD-186,Decor & Accessories|Mirrors,Scandinavian,285.0,Solid oak frame with beveled glass,Bedroom|Hallway,Natural Oak
+PROD-187,Decor & Accessories|Mirrors,Organic Modern,450.0,Antiqued brass with aged patina,Living Room|Dining Room,Brass
+PROD-188,Decor & Accessories|Mirrors,Minimalist,195.0,Frameless beveled glass,Bathroom|Bedroom,Ivory
+PROD-189,Decor & Accessories|Mirrors,Wabi-Sabi,320.0,Hand-formed ceramic with gold leaf details,Bedroom|Home Office,Cream
+PROD-190,Decor & Accessories|Mirrors,Japandi,395.0,Natural travertine stone,Bathroom|Hallway,Sand
+PROD-191,Decor & Accessories|Wall Art,Scandinavian,225.0,Archival pigment print on cotton paper,Living Room|Bedroom,Off-White
+PROD-192,Decor & Accessories|Wall Art,Japandi,180.0,Sumi ink on handmade washi paper,Home Office|Bedroom,Charcoal
+PROD-193,Decor & Accessories|Wall Art,Minimalist,650.0,Acrylic on Belgian linen canvas,Living Room|Dining Room,Dusty Blue
+PROD-194,Decor & Accessories|Wall Art,Organic Modern,385.0,Cast concrete with aggregate texture,Hallway|Living Room,Warm Grey
+PROD-195,Decor & Accessories|Wall Art,Wabi-Sabi,295.0,Mixed media on reclaimed wood,Home Office|Bedroom,Natural Oak
+PROD-196,Decor & Accessories|Planters,Scandinavian,145.0,Glazed stoneware with drainage system,Living Room|Home Office,Sage Green
+PROD-197,Decor & Accessories|Planters,Organic Modern,210.0,Terrazzo with marble and granite chips,Living Room|Dining Room,Oatmeal
+PROD-198,Decor & Accessories|Planters,Japandi,95.0,Unglazed ceramic with natural finish,Home Office|Bedroom,Charcoal
+PROD-199,Decor & Accessories|Planters,Wabi-Sabi,78.0,Hand-carved ceramic with weathered texture,Kitchen|Bathroom,Terracotta
+PROD-200,Decor & Accessories|Planters,Minimalist,165.0,Clear borosilicate glass with brass frame,Living Room|Home Office,Brass

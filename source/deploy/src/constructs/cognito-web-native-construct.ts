@@ -1,0 +1,176 @@
+import * as cdk from "aws-cdk-lib";
+import { Construct } from "constructs";
+
+export interface CognitoWebNativeConstructProps extends cdk.StackProps {}
+
+/**
+ * Deploys Cognito with an Authenticated & UnAuthenticated Role with a Web and Native client
+ */
+export class CognitoWebNativeConstruct extends Construct {
+    public userPool: cdk.aws_cognito.UserPool;
+    public webClientUserPool: cdk.aws_cognito.UserPoolClient;
+    public nativeClientUserPool: cdk.aws_cognito.UserPoolClient;
+    public userPoolId: string;
+    public identityPoolId: string;
+    public webClientId: string;
+    public nativeClientId: string;
+    public authenticatedRole: cdk.aws_iam.Role;
+    public unauthenticatedRole: cdk.aws_iam.Role;
+
+    constructor(
+        parent: Construct,
+        name: string,
+        _props: CognitoWebNativeConstructProps,
+    ) {
+        super(parent, name);
+
+        const userPool = new cdk.aws_cognito.UserPool(this, "UserPool", {
+            selfSignUpEnabled: false,
+            autoVerify: { email: true },
+            userVerification: {
+                emailSubject: "Verify your email the app!",
+                emailBody:
+                    "Hello {username}, Thanks for signing up to the app! Your verification code is {####}",
+                emailStyle: cdk.aws_cognito.VerificationEmailStyle.CODE,
+                smsMessage:
+                    "Hello {username}, Thanks for signing up to app! Your verification code is {####}",
+            },
+            removalPolicy: cdk.RemovalPolicy.DESTROY,
+            passwordPolicy: {
+                minLength: 8,
+                requireLowercase: true,
+                requireDigits: true,
+                requireUppercase: true,
+                requireSymbols: true,
+            },
+        });
+
+        const userPoolWebClient = new cdk.aws_cognito.UserPoolClient(
+            this,
+            "UserPoolWebClient",
+            {
+                generateSecret: false,
+                userPool: userPool,
+                userPoolClientName: "WebClient",
+            },
+        );
+
+        const userPoolNativeClient = new cdk.aws_cognito.UserPoolClient(
+            this,
+            "UserPoolNativeClient",
+            {
+                generateSecret: true,
+                userPool: userPool,
+                userPoolClientName: "NativeClient",
+            },
+        );
+
+        const identityPool = new cdk.aws_cognito.CfnIdentityPool(
+            this,
+            "IdentityPool",
+            {
+                allowUnauthenticatedIdentities: false,
+                cognitoIdentityProviders: [
+                    {
+                        clientId: userPoolWebClient.userPoolClientId,
+                        providerName: userPool.userPoolProviderName,
+                    },
+                    {
+                        clientId: userPoolNativeClient.userPoolClientId,
+                        providerName: userPool.userPoolProviderName,
+                    },
+                ],
+            },
+        );
+
+        const unauthenticatedRole = new cdk.aws_iam.Role(
+            this,
+            "DefaultUnauthenticatedRole",
+            {
+                assumedBy: new cdk.aws_iam.FederatedPrincipal(
+                    "cognito-identity.amazonaws.com",
+                    {
+                        StringEquals: {
+                            "cognito-identity.amazonaws.com:aud":
+                                identityPool.ref,
+                        },
+                        "ForAnyValue:StringLike": {
+                            "cognito-identity.amazonaws.com:amr":
+                                "unauthenticated",
+                        },
+                    },
+                    "sts:AssumeRoleWithWebIdentity",
+                ),
+            },
+        );
+
+        const authenticatedRole = new cdk.aws_iam.Role(
+            this,
+            "DefaultAuthenticatedRole",
+            {
+                assumedBy: new cdk.aws_iam.FederatedPrincipal(
+                    "cognito-identity.amazonaws.com",
+                    {
+                        StringEquals: {
+                            "cognito-identity.amazonaws.com:aud":
+                                identityPool.ref,
+                        },
+                        "ForAnyValue:StringLike": {
+                            "cognito-identity.amazonaws.com:amr":
+                                "authenticated",
+                        },
+                    },
+                    "sts:AssumeRoleWithWebIdentity",
+                ),
+            },
+        );
+
+        new cdk.aws_cognito.CfnIdentityPoolRoleAttachment(
+            this,
+            "IdentityPoolRoleAttachment",
+            {
+                identityPoolId: identityPool.ref,
+                roles: {
+                    unauthenticated: unauthenticatedRole.roleArn,
+                    authenticated: authenticatedRole.roleArn,
+                },
+            },
+        );
+
+        new cdk.CfnOutput(this, "UserPoolId", {
+            value: userPool.userPoolId,
+        });
+        new cdk.CfnOutput(this, "IdentityPoolId", {
+            value: identityPool.ref,
+        });
+        new cdk.CfnOutput(this, "WebClientId", {
+            value: userPoolWebClient.userPoolClientId,
+        });
+        new cdk.CfnOutput(this, "NativeClientId", {
+            value: userPoolNativeClient.userPoolClientId,
+        });
+
+        new cdk.aws_ssm.StringParameter(this, "COGNITO_USER_POOL_ID", {
+            stringValue: userPool.userPoolId,
+        });
+        new cdk.aws_ssm.StringParameter(this, "COGNITO_IDENTITY_POOL_ID", {
+            stringValue: identityPool.ref,
+        });
+        new cdk.aws_ssm.StringParameter(this, "COGNITO_WEB_CLIENT_ID", {
+            stringValue: userPoolWebClient.userPoolClientId,
+        });
+        new cdk.aws_ssm.StringParameter(this, "COGNITO_NATIVE_CLIENT_ID", {
+            stringValue: userPoolNativeClient.userPoolClientId,
+        });
+
+        this.userPool = userPool;
+        this.webClientUserPool = userPoolWebClient;
+        this.nativeClientUserPool = userPoolNativeClient;
+        this.authenticatedRole = authenticatedRole;
+        this.unauthenticatedRole = unauthenticatedRole;
+        this.userPoolId = userPool.userPoolId;
+        this.identityPoolId = identityPool.ref;
+        this.webClientId = userPoolWebClient.userPoolClientId;
+        this.nativeClientId = userPoolNativeClient.userPoolClientId;
+    }
+}

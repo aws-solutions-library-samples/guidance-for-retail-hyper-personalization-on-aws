@@ -1,0 +1,12 @@
+{
+    "name": "jwt-layer",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "jsonwebtoken": "^9.0.2",
+        "jwks-rsa": "^3.1.0"
+    },
+    "scripts": {
+        "build": "rm -rf build nodejs && mkdir -p nodejs && cp package.json nodejs/ && cd nodejs && npm install --omit=dev && cd .. && mkdir -p build && cd .. && zip -r jwt-layer/build/jwt-layer.zip jwt-layer/nodejs"
+    }
+}
