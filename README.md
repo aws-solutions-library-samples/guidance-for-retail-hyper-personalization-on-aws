@@ -266,4 +266,7 @@ source/
 
 ## Authors
 
+- Reibjok Othow, Developer
+- Daman Orestad, Guidance Support
+- Pranjit Biswas, Guidance Support
 - AWS Solutions Architecture Team
