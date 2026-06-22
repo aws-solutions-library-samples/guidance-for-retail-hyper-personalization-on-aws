@@ -30,7 +30,9 @@ The sample demonstrates the "dual AI strategy" from the guidance architecture: A
 
 ### Architecture
 
-![Architecture Diagram](assets/images/architecture-diagram.jpg)
+![Architecture Overview](assets/images/architecture-diagram-overview.png)
+
+![Architecture Detailed](assets/images/architecture-diagram-detailed.png)
 
 The architecture implements two primary data flows from the guidance:
 
