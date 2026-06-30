@@ -43,7 +43,7 @@ The architecture implements two primary data flows from the guidance:
 4. Lambda enriches results with product metadata from DynamoDB
 5. Frontend displays personalized "Recommended for You" and "You May Also Like" sections
 
-**Data Flow 3 — AI Shopping Assistant:**
+**Data Flow 2 — AI Shopping Assistant:**
 1. Customer sends a natural language query via WebSocket
 2. Lambda invokes Bedrock AgentCore Runtime with the message
 3. Agent uses tools to search the Knowledge Base (semantic product search), call Personalize (personalized ranking), and query DynamoDB (product details)
