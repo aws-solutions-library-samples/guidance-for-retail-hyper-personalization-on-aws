@@ -7,15 +7,41 @@ Retail Personalization sample.
 
 - Python 3.11+
 - AWS credentials configured with access to Amazon Bedrock (Claude + Nova Canvas)
-- Bedrock model access enabled for:
-  - `us.anthropic.claude-sonnet-4-20250514-v1:0` (text generation)
-  - `amazon.nova-canvas-v1:0` (image generation)
+- Bedrock model access enabled for the models configured below (by default
+  `us.anthropic.claude-sonnet-4-20250514-v1:0` for text and
+  `amazon.nova-canvas-v1:0` for images)
 
 ## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
+
+## Model Configuration
+
+Model IDs are not hardcoded in the pipeline scripts. The defaults live in
+`config.py` (`BEDROCK_CONFIG`) and each can be overridden with an environment
+variable, so you can swap models — for example when one is deprecated — without
+editing source:
+
+| Environment variable | Default | Purpose |
+| --- | --- | --- |
+| `DATAGEN_TEXT_MODEL_ID` | `us.anthropic.claude-sonnet-4-20250514-v1:0` | Product catalog and description generation |
+| `DATAGEN_IMAGE_MODEL_ID` | `amazon.nova-canvas-v1:0` | Product image generation |
+| `DATAGEN_REGION` | `us-east-1` | Region for both Bedrock clients |
+
+```bash
+DATAGEN_TEXT_MODEL_ID=us.anthropic.claude-sonnet-4-5-20250929-v1:0 \
+    python generate_catalog.py
+```
+
+Whichever models you choose must have access enabled in your account for the
+region you are running in.
+
+> This pipeline is an optional developer tool — the generated catalog, images and
+> training data are already committed to the repository, so you only need to run
+> it if you want to regenerate the sample data. The models used by the *deployed*
+> application are configured separately, via CDK context (see the main README).
 
 ## Pipeline Steps
 

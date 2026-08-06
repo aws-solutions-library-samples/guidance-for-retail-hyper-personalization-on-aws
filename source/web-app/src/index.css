@@ -1,12 +1,26 @@
 @import "tailwindcss";
 
+/*
+ * Fonts are bundled locally via npm rather than fetched from a third-party CDN,
+ * so the storefront makes no external requests at page load.
+ *
+ * Both are variable fonts: a single file per Unicode subset covers the whole
+ * weight range, and the browser downloads only the subsets it needs via the
+ * unicode-range declarations in each package.
+ *
+ * Inter and Playfair Display are licensed under the SIL Open Font License 1.1.
+ * See NOTICE for attribution.
+ */
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/playfair-display";
+
 @theme {
     --color-brand: #1a1a1a;
     --color-brand-light: #f5f3f0;
     --color-brand-accent: #8b7355;
     --color-brand-muted: #6b7280;
-    --font-sans: "Inter", system-ui, -apple-system, sans-serif;
-    --font-serif: "Playfair Display", Georgia, serif;
+    --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+    --font-serif: "Playfair Display Variable", "Playfair Display", Georgia, serif;
 }
 
 body {

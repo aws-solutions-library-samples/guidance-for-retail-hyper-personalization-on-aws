@@ -10,15 +10,32 @@ const {
 const { KMSClient, EncryptCommand, DecryptCommand } = require("@aws-sdk/client-kms");
 const { randomUUID } = require("crypto");
 
-const agentCoreClient = new BedrockAgentCoreClient({
-    region: process.env.AGENTCORE_REGION || "eu-west-2",
-});
+/**
+ * Reads a required environment variable, throwing at module load if it is unset.
+ *
+ * All of the values below are injected by CDK (see deploy/src/app-stack.ts).
+ * We deliberately do not fall back to hardcoded defaults: a wrong-but-plausible
+ * default would silently send traffic to the wrong region or KMS key instead of
+ * surfacing the misconfiguration.
+ */
+function requireEnv(name) {
+    const value = process.env[name];
+    if (!value) {
+        throw new Error(
+            `Missing required environment variable: ${name}. ` +
+            "This is set by the CDK stack; check the Lambda configuration.",
+        );
+    }
+    return value;
+}
 
-const kmsClient = new KMSClient({
-    region: process.env.AWS_REGION || "eu-west-2",
-});
+const AWS_REGION = requireEnv("AWS_REGION");
+const AGENTCORE_REGION = requireEnv("AGENTCORE_REGION");
+const KMS_KEY_ID = requireEnv("SESSION_KMS_KEY_ID");
 
-const KMS_KEY_ID = process.env.SESSION_KMS_KEY_ID || "alias/agentcore-sessions";
+const agentCoreClient = new BedrockAgentCoreClient({ region: AGENTCORE_REGION });
+
+const kmsClient = new KMSClient({ region: AWS_REGION });
 
 const encryptSessionId = async (sessionId) => {
     const command = new EncryptCommand({
@@ -81,7 +98,7 @@ exports.handler = async (event, context) => {
 
         const apigw = new ApiGatewayManagementApiClient({
             endpoint: endpointUrl,
-            region: process.env.AWS_REGION || "eu-west-2",
+            region: AWS_REGION,
         });
 
         const parsedBody = JSON.parse(event.body);

@@ -31,7 +31,33 @@ bedrock_agent_runtime = boto3.client("bedrock-agent-runtime", region_name=region
 personalize_runtime = boto3.client("personalize-runtime", region_name=region)
 dynamodb = boto3.resource("dynamodb", region_name=region)
 
+
+def _require_env(name: str) -> str:
+    """Read a required environment variable, failing at import time if unset.
+
+    Injected by CDK via the AgentCore Runtime's environment variables (see
+    deploy/src/app-stack.ts). Unlike the optional values below — where a missing
+    value degrades a single tool — the model ID has no usable fallback, so we
+    fail immediately and visibly rather than at first invocation.
+    """
+    value = os.environ.get(name, "").strip()
+    if not value:
+        raise RuntimeError(
+            f"Missing required environment variable: {name}. "
+            "This is set by the CDK stack; check the AgentCore Runtime configuration."
+        )
+    return value
+
+
 # Configuration from environment
+#
+# The model ID is configuration, not source code: foundation models are
+# deprecated and replaced over time, and customers need to be able to point the
+# agent at a different model (or a cross-region inference profile) without
+# editing this file. Change it via the `bedrock_model_id` CDK context value in
+# source/deploy/cdk.json.
+BEDROCK_MODEL_ID = _require_env("BEDROCK_MODEL_ID")
+
 KNOWLEDGE_BASE_ID = os.environ.get("KNOWLEDGE_BASE_ID", "")
 PRODUCT_TABLE_NAME = os.environ.get("PRODUCT_TABLE_NAME", "")
 PERSONALIZE_CAMPAIGN_ARN = os.environ.get("PERSONALIZE_CAMPAIGN_ARN", "")
@@ -317,7 +343,7 @@ Your role is to help customers find the perfect furniture and homeware for their
 """
 
     bedrock_model = BedrockModel(
-        model_id="us.anthropic.claude-sonnet-4-20250514-v1:0",
+        model_id=BEDROCK_MODEL_ID,
         region_name=region,
         temperature=0.3,
     )

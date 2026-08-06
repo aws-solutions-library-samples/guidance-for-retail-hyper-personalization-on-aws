@@ -3,6 +3,8 @@ Brand identity, style guide, and category definitions for the
 Retail Personalization sample product catalog.
 """
 
+import os
+
 # ─── Brand Identity ───────────────────────────────────────────────────────────
 
 BRAND_NAME = "Nordheim"
@@ -146,9 +148,31 @@ TAGS = [
 ]
 
 # ─── Bedrock Model Configuration ─────────────────────────────────────────────
+#
+# Model IDs are configuration, not source code: foundation models are deprecated
+# and replaced over time, so each value below can be overridden with an
+# environment variable and requires no code change to swap.
+#
+# This pipeline is an optional, offline developer tool — the generated catalog,
+# images and training data are already committed under data-generation/ — so
+# these keep working defaults rather than failing when unset. The deployed
+# components (the agent and the Knowledge Base) take the stricter approach and
+# fail loudly if their model IDs are missing.
+#
+#   DATAGEN_TEXT_MODEL_ID    — text generation (product catalog, descriptions)
+#   DATAGEN_IMAGE_MODEL_ID   — image generation (product photography)
+#   DATAGEN_REGION           — region used for both Bedrock clients
+#
+# Example:
+#   DATAGEN_TEXT_MODEL_ID=us.anthropic.claude-sonnet-4-5-20250929-v1:0 \
+#       python generate_catalog.py
+
+DEFAULT_TEXT_MODEL_ID = "us.anthropic.claude-sonnet-4-20250514-v1:0"
+DEFAULT_IMAGE_MODEL_ID = "amazon.nova-canvas-v1:0"
+DEFAULT_REGION = "us-east-1"
 
 BEDROCK_CONFIG = {
-    "text_model_id": "us.anthropic.claude-sonnet-4-20250514-v1:0",
-    "image_model_id": "amazon.nova-canvas-v1:0",
-    "region": "us-east-1",
+    "text_model_id": os.environ.get("DATAGEN_TEXT_MODEL_ID") or DEFAULT_TEXT_MODEL_ID,
+    "image_model_id": os.environ.get("DATAGEN_IMAGE_MODEL_ID") or DEFAULT_IMAGE_MODEL_ID,
+    "region": os.environ.get("DATAGEN_REGION") or DEFAULT_REGION,
 }

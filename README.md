@@ -8,14 +8,16 @@
 2. [Prerequisites](#prerequisites)
     - [Operating System](#operating-system)
     - [AWS Account Requirements](#aws-account-requirements)
+    - [Model Configuration](#model-configuration)
     - [Service Limits](#service-limits)
     - [Supported Regions](#supported-regions)
 3. [Deployment Steps](#deployment-steps)
 4. [Deployment Validation](#deployment-validation)
 5. [Running the Guidance](#running-the-guidance)
-6. [Next Steps](#next-steps)
-7. [Cleanup](#cleanup)
-8. [Notices](#notices)
+6. [Security Considerations](#security-considerations)
+7. [Next Steps](#next-steps)
+8. [Cleanup](#cleanup)
+9. [Notices](#notices)
 
 ## Overview
 
@@ -88,11 +90,46 @@ Required tools:
 
 ### AWS Account Requirements
 
-- Amazon Bedrock model access enabled for:
+- Amazon Bedrock model access enabled for the models configured in
+  [Model Configuration](#model-configuration). With the defaults, that means:
   - `anthropic.claude-sonnet-4-20250514-v1:0` (or cross-region `us.anthropic.claude-sonnet-4-20250514-v1:0`)
   - `amazon.titan-embed-text-v2:0`
 - Sufficient service quotas for Amazon Personalize, OpenSearch Serverless, and Bedrock AgentCore
 - IAM permissions to create all resources in the stack
+
+### Model Configuration
+
+Foundation model IDs are configuration rather than source code, so you can point
+this Guidance at different models — for example when a model is deprecated —
+without editing the application. They are set as CDK context values in
+[`source/deploy/cdk.json`](source/deploy/cdk.json):
+
+| Context value | Default | Purpose |
+| --- | --- | --- |
+| `bedrock_model_id` | `us.anthropic.claude-sonnet-4-20250514-v1:0` | Model used by the AI Shopping Assistant agent |
+| `embedding_model_id` | `amazon.titan-embed-text-v2:0` | Embedding model used by the Knowledge Base |
+| `embedding_model_dimensions` | `1024` | Vector dimensions produced by `embedding_model_id` |
+
+Either edit `cdk.json` or override at deploy time:
+
+```bash
+cd source/deploy
+npx cdk deploy --all --require-approval=never \
+    -c bedrock_model_id=us.anthropic.claude-sonnet-4-5-20250929-v1:0
+```
+
+All three values are validated at synth time and deployment fails with an
+explicit error if any is missing or malformed, rather than failing after
+deployment.
+
+**Important:** `embedding_model_id` and `embedding_model_dimensions` must stay
+consistent with each other. The dimension count is written into the OpenSearch
+Serverless vector index, which is immutable once created — so changing the
+embedding model on an existing deployment requires recreating the index and
+Knowledge Base, and re-running ingestion.
+
+The data generation pipeline configures its models separately; see
+[`source/data-generation/README.md`](source/data-generation/README.md).
 
 ### aws cdk bootstrap
 
@@ -213,6 +250,88 @@ Expected output: `"CREATE_COMPLETE"`
    - "I need warm lighting for my bedroom"
 
 The assistant will search the product catalog semantically, provide personalized recommendations, and show clickable product cards with images.
+
+## Security Considerations
+
+This Guidance is a demonstration deployment. Review the following before adapting
+it for production use.
+
+### IAM permissions
+
+IAM policies in this Guidance are scoped to specific resource ARNs wherever the
+service supports it — the Personalize campaign and event tracker, the Bedrock
+Knowledge Base, the AgentCore runtime, the OpenSearch Serverless collection, and
+the DynamoDB tables. Two permissions cannot be fully scoped, and you should
+understand both:
+
+**1. Bedrock model invocation with a cross-region inference profile.** The
+default `bedrock_model_id` is a system-defined inference profile
+(`us.anthropic.claude-sonnet-4-20250514-v1:0`). Bedrock requires
+`bedrock:InvokeModel` on both the inference profile and the underlying
+foundation model in *every* Region the profile routes to, and AWS controls that
+Region set and changes it over time. The Region segment of the foundation-model
+ARN is therefore a wildcard:
+
+```
+arn:aws:bedrock:*::foundation-model/anthropic.claude-sonnet-4-20250514-v1:0
+```
+
+The permission is still bound to one specific model rather than all of Bedrock,
+and foundation-model ARNs contain no account ID, so no customer-owned resource is
+in scope. If you need to eliminate the wildcard entirely, set
+`bedrock_model_id` to a single-Region foundation model ID (see
+[Model Configuration](#model-configuration)) — the policy then resolves to one
+fully-qualified ARN — at the cost of losing cross-region throughput resilience.
+
+**2. `aoss:BatchGetCollection`.** This action does not support resource-level
+ARNs. Following the
+[documented least-privilege pattern for OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-collection-permissions.html),
+it is granted on `Resource: "*"` constrained by an `aoss:collection` condition
+key naming this deployment's collection, so the call cannot describe other
+collections in the account.
+
+Both are flagged by `cdk-nag` and carry targeted, evidence-bearing suppressions
+scoped to the exact ARN rather than blanket wildcard exemptions.
+
+### Knowledge Base network exposure
+
+The OpenSearch Serverless collection backing the Knowledge Base is created with
+a network policy of `AllowFromPublic: true`
+([`knowledge-base-construct.ts`](source/deploy/src/constructs/knowledge-base-construct.ts)).
+Its data-plane endpoint is therefore reachable from the public internet.
+
+Access is still gated by IAM and SigV4 request signing — an unauthenticated
+caller cannot read or write data — and in this Guidance only the Bedrock
+Knowledge Base service role holds data-access permissions on the collection.
+The endpoint being publicly resolvable is nonetheless a wider network surface
+than production workloads should accept.
+
+**For production,** place the collection behind an
+[OpenSearch Serverless VPC endpoint](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html)
+and change the network policy to `AllowFromPublic: false` with the VPC endpoint
+listed in `SourceVPCEs`. This restricts the data-plane endpoint to traffic
+originating inside your VPC.
+
+### Other production hardening
+
+The deployment is optimized for straightforward setup and teardown rather than
+production operation. Before production use, review at minimum:
+
+- **Cognito:** MFA and advanced security features are not enabled, and the user
+  pool is created with a `DESTROY` removal policy.
+- **API access logging:** access logging is not enabled on the HTTP API or the
+  WebSocket API stage.
+- **Data retention:** S3 buckets and DynamoDB tables use `DESTROY` removal
+  policies with `autoDeleteObjects` so that `cdk destroy` leaves nothing behind.
+  Production deployments should use `RETAIN`.
+- **Encryption:** resources use AWS-managed keys (SSE-S3, AWS-managed DynamoDB
+  encryption) rather than customer-managed KMS keys.
+- **Bedrock Guardrails:** no guardrail is attached to the agent. Consider adding
+  one to filter prompts and responses, since Knowledge Base content and product
+  data flow into the model context.
+- **Authorization:** the recommendations and events APIs accept a `userId`
+  supplied by the caller. In production, derive the user identity from the
+  validated JWT claims instead.
 
 ## Next Steps
 

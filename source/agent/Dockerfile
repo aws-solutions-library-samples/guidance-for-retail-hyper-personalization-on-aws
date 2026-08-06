@@ -9,8 +9,10 @@ RUN pip install uv
 COPY pyproject.toml .
 RUN uv pip install --system -e .
 
-ENV AWS_REGION=eu-west-2
-ENV AWS_DEFAULT_REGION=eu-west-2
+# AWS_REGION / AWS_DEFAULT_REGION are injected by the AgentCore Runtime at
+# deploy time (see AgentRuntime environmentVariables in deploy/src/app-stack.ts).
+# They are deliberately not baked into the image so the container cannot silently
+# run against the wrong region.
 ENV UV_NO_SYNC=1
 
 COPY . .

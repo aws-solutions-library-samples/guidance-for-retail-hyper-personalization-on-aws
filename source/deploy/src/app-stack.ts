@@ -1,6 +1,7 @@
 import * as cdk from "aws-cdk-lib";
 import * as agentcore from "@aws-cdk/aws-bedrock-agentcore-alpha";
 import { Duration, RemovalPolicy } from "aws-cdk-lib";
+import { NagSuppressions } from "cdk-nag";
 import { Construct } from "constructs";
 
 import { ApiGatewayV2CloudFrontConstruct } from "./constructs/apigatewayv2-cloudfront-construct";
@@ -18,9 +19,73 @@ import {
 
 import * as apigwv2Integrations from "aws-cdk-lib/aws-apigatewayv2-integrations";
 
+/**
+ * Matches the geographic prefix on a cross-region (system-defined) Bedrock
+ * inference profile ID, e.g. the "us." in "us.anthropic.claude-sonnet-4-...".
+ */
+const INFERENCE_PROFILE_PREFIX = /^(us|eu|apac|us-gov|global)\./;
+
+/**
+ * Builds the least-privilege resource list for `bedrock:InvokeModel*` given a
+ * configured model ID.
+ *
+ * Two cases:
+ *
+ * 1. A plain foundation model ID ("anthropic.claude-sonnet-4-...") resolves to
+ *    a single foundation-model ARN in the deployment Region.
+ *
+ * 2. A cross-region inference profile ID ("us.anthropic.claude-sonnet-4-...")
+ *    resolves to the inference-profile ARN *and* the underlying foundation
+ *    model. Bedrock requires both: "When you specify an inference profile in
+ *    the Resource field ... you must also specify the foundation model in each
+ *    Region associated with it."
+ *    https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-prereq.html
+ *
+ *    The Region segment of that foundation-model ARN is therefore a wildcard.
+ *    The set of Regions a system-defined profile routes to is controlled by AWS
+ *    and changes over time, so enumerating them here would silently break
+ *    inference whenever AWS adds a Region to the profile. The permission is
+ *    still tightly bound to one specific model — it is not `Resource: "*"` —
+ *    and foundation-model ARNs are account-less, so this grants no access to
+ *    any customer-owned resource. See "Security considerations" in the README.
+ */
+function bedrockInvokeModelResources(
+    modelId: string,
+    region: string,
+    account: string,
+    partition: string,
+): string[] {
+    const isInferenceProfile = INFERENCE_PROFILE_PREFIX.test(modelId);
+    const baseModelId = modelId.replace(INFERENCE_PROFILE_PREFIX, "");
+
+    if (!isInferenceProfile) {
+        return [`arn:${partition}:bedrock:${region}::foundation-model/${baseModelId}`];
+    }
+
+    return [
+        `arn:${partition}:bedrock:${region}:${account}:inference-profile/${modelId}`,
+        `arn:${partition}:bedrock:*::foundation-model/${baseModelId}`,
+    ];
+}
+
 export interface AppStackProps extends cdk.StackProps {
     readonly ssmWafArnParameterName: string;
     readonly ssmWafArnParameterRegion: string;
+    /**
+     * Bedrock model ID (or cross-region inference profile ID) used by the
+     * AI Shopping Assistant agent. Supplied from CDK context so the model can
+     * be swapped without code changes — see cdk.json.
+     */
+    readonly bedrockModelId: string;
+    /**
+     * Bedrock embedding model ID used by the Knowledge Base.
+     */
+    readonly embeddingModelId: string;
+    /**
+     * Vector dimensions produced by `embeddingModelId`. Must match the model,
+     * as it is baked into the OpenSearch Serverless vector index.
+     */
+    readonly embeddingModelDimensions: number;
 }
 
 export class AppStack extends cdk.Stack {
@@ -93,6 +158,8 @@ export class AppStack extends cdk.Stack {
         const knowledgeBase = new KnowledgeBaseConstruct(this, "KnowledgeBase", {
             stackName: this.stackName,
             knowledgeBaseBucket: productData.knowledgeBaseBucket,
+            embeddingModelId: props.embeddingModelId,
+            embeddingModelDimensions: props.embeddingModelDimensions,
         });
 
         // ──────────────────────────────────────────────────────────────────
@@ -103,6 +170,20 @@ export class AppStack extends cdk.Stack {
             stackName: this.stackName,
             personalizeBucket: productData.personalizeBucket,
         });
+
+        // The campaign and event tracker are created post-deploy (model training
+        // takes 1-2 hours, so they are not CloudFormation resources), but their
+        // names are deterministic. IAM policies can reference an ARN before the
+        // resource exists, which lets us scope permissions to exactly these two
+        // resources instead of using a wildcard.
+        const personalizeCampaignArn =
+            `arn:${this.partition}:personalize:${this.region}:${this.account}:campaign/${this.stackName}-recommendations`;
+
+        // scripts/setup_personalize.py creates the event tracker under the stack
+        // name prefix. The exact suffix is not known at synth time, so this is
+        // scoped to the stack's own trackers rather than all of Personalize.
+        const personalizeEventTrackerArn =
+            `arn:${this.partition}:personalize:${this.region}:${this.account}:event-tracker/${this.stackName}-*`;
 
         // ──────────────────────────────────────────────────────────────────
         // AgentCore Runtime
@@ -121,18 +202,58 @@ export class AppStack extends cdk.Stack {
             description: "AI Shopping Assistant agent runtime",
             environmentVariables: {
                 AWS_REGION: this.region,
+                BEDROCK_MODEL_ID: props.bedrockModelId,
                 KNOWLEDGE_BASE_ID: knowledgeBase.knowledgeBaseId,
                 PRODUCT_TABLE_NAME: productData.productTable.tableName,
                 PERSONALIZE_DATASET_GROUP_ARN: personalize.datasetGroupArn,
-                PERSONALIZE_CAMPAIGN_ARN: `arn:aws:personalize:${this.region}:${this.account}:campaign/${this.stackName}-recommendations`,
+                PERSONALIZE_CAMPAIGN_ARN: personalizeCampaignArn,
             },
         });
 
-        // Grant Bedrock model invocation
+        // Grant Bedrock model invocation, scoped to the configured model only.
+        // See bedrockInvokeModelResources() above for why the foundation-model
+        // ARN carries a Region wildcard when an inference profile is used.
         agentRuntime.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
+            sid: "InvokeConfiguredBedrockModel",
             actions: ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
-            resources: ["*"],
+            resources: bedrockInvokeModelResources(
+                props.bedrockModelId,
+                this.region,
+                this.account,
+                this.partition,
+            ),
         }));
+
+        // When the configured model is a cross-region inference profile, the
+        // foundation-model ARN must carry a Region wildcard (see
+        // bedrockInvokeModelResources above). Suppress AwsSolutions-IAM5 for
+        // that one ARN only, with the reason recorded, rather than blanket-
+        // suppressing wildcard findings on this policy.
+        if (INFERENCE_PROFILE_PREFIX.test(props.bedrockModelId)) {
+            const baseModelId = props.bedrockModelId.replace(INFERENCE_PROFILE_PREFIX, "");
+            NagSuppressions.addResourceSuppressionsByPath(
+                this,
+                `/${this.stackName}/AgentRuntime/ExecutionRole/DefaultPolicy/Resource`,
+                [
+                    {
+                        id: "AwsSolutions-IAM5",
+                        reason:
+                            "bedrock_model_id is configured as a cross-region inference profile " +
+                            `("${props.bedrockModelId}"). Bedrock requires bedrock:InvokeModel on both the ` +
+                            "inference profile and the underlying foundation model in every Region the " +
+                            "profile routes to. AWS controls that Region set and changes it over time, so " +
+                            "the Region segment is wildcarded rather than enumerated, which would break " +
+                            "inference whenever AWS adds a Region. The permission remains scoped to this " +
+                            "one model, and foundation-model ARNs are account-less, so no customer-owned " +
+                            "resource is in scope. To remove this wildcard, set bedrock_model_id to a " +
+                            "single-Region foundation model ID.",
+                        appliesTo: [
+                            `Resource::arn:${this.partition}:bedrock:*::foundation-model/${baseModelId}`,
+                        ],
+                    },
+                ],
+            );
+        }
 
         // Grant Knowledge Base retrieval
         agentRuntime.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
@@ -143,15 +264,15 @@ export class AppStack extends cdk.Stack {
         // Grant DynamoDB read access for product lookups
         productData.productTable.grantReadData(agentRuntime);
 
-        // Grant Personalize read access for recommendations
+        // Grant Personalize read access for recommendations, scoped to this
+        // stack's campaign. The agent's get_recommendations tool calls only
+        // GetRecommendations — GetPersonalizedRanking, DescribeCampaign and
+        // ListCampaigns were previously granted but never used, so they are
+        // no longer requested.
         agentRuntime.addToRolePolicy(new cdk.aws_iam.PolicyStatement({
-            actions: [
-                "personalize:GetRecommendations",
-                "personalize:GetPersonalizedRanking",
-                "personalize:DescribeCampaign",
-                "personalize:ListCampaigns",
-            ],
-            resources: ["*"],
+            sid: "GetPersonalizeRecommendations",
+            actions: ["personalize:GetRecommendations"],
+            resources: [personalizeCampaignArn],
         }));
 
         // ──────────────────────────────────────────────────────────────────
@@ -188,10 +309,14 @@ export class AppStack extends cdk.Stack {
             ],
         });
 
-        // Grant Personalize and DynamoDB access
+        // Grant Personalize and DynamoDB access, scoped to this stack's campaign.
+        // get-recommendations.js calls only GetRecommendations (it passes itemId
+        // to the same API for "similar items"), so GetPersonalizedRanking is not
+        // requested.
         recommendationsFnRole.addToPolicy(new cdk.aws_iam.PolicyStatement({
-            actions: ["personalize:GetRecommendations", "personalize:GetPersonalizedRanking"],
-            resources: ["*"],
+            sid: "GetPersonalizeRecommendations",
+            actions: ["personalize:GetRecommendations"],
+            resources: [personalizeCampaignArn],
         }));
         productData.productTable.grantReadData(recommendationsFnRole);
 
@@ -235,9 +360,11 @@ export class AppStack extends cdk.Stack {
             ],
         });
 
+        // PutEvents is authorized against the event tracker, not the campaign.
         eventsFnRole.addToPolicy(new cdk.aws_iam.PolicyStatement({
+            sid: "PutPersonalizeEvents",
             actions: ["personalize:PutEvents"],
-            resources: ["*"],
+            resources: [personalizeEventTrackerArn],
         }));
 
         const eventsFn = new cdk.aws_lambda.Function(this, "EventsFunction", {
@@ -304,10 +431,27 @@ export class AppStack extends cdk.Stack {
                 `${wsApi.API_ARN_PREFIX}:${wsApi.api.apiId}/${wsApi.stage.stageName}/*`,
             ],
         }));
+        // Scope bedrock-agentcore:InvokeAgentRuntime to this runtime only.
+        //
+        // NOTE: we do not use agentRuntime.grantInvokeRuntime() here. That helper
+        // grants only the bare runtime ARN, but AgentCore authorizes the call
+        // against the runtime *endpoint* sub-resource — an unqualified
+        // InvokeAgentRuntime resolves to the DEFAULT endpoint, producing
+        // AccessDeniedException on
+        // .../runtime/<id>/runtime-endpoint/DEFAULT. Both ARNs are granted below,
+        // fully qualified, so no wildcard is required.
+        //
+        // InvokeAgentRuntimeForUser is deliberately not granted: the chat handler
+        // does not send the X-Amzn-Bedrock-AgentCore-Runtime-User-Id header.
         chatFnRole.addToPolicy(new cdk.aws_iam.PolicyStatement({
+            sid: "InvokeThisAgentRuntime",
             actions: ["bedrock-agentcore:InvokeAgentRuntime"],
-            resources: ["*"],
+            resources: [
+                agentRuntime.agentRuntimeArn,
+                `${agentRuntime.agentRuntimeArn}/runtime-endpoint/DEFAULT`,
+            ],
         }));
+
         chatFnRole.addToPolicy(new cdk.aws_iam.PolicyStatement({
             actions: ["kms:Encrypt", "kms:Decrypt"],
             resources: [sessionKmsKey.keyArn],

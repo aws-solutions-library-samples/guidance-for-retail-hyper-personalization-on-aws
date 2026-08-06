@@ -23,7 +23,12 @@
         "@aws-cdk/aws-iam:standardizedServicePrincipals": true,
         "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": true,
         "region": "us-east-1",
-        "stack_name": "retail-personalization-on-aws"
+        "stack_name": "retail-personalization-on-aws",
+
+        "_comment_models": "Bedrock model configuration. Override with -c <key>=<value> at deploy time, or edit here, to swap models without changing source code. embedding_model_id and embedding_model_dimensions MUST stay consistent: the dimension count is baked into the OpenSearch vector index, so changing the embedding model requires changing the dimensions to match and recreating the Knowledge Base.",
+        "bedrock_model_id": "us.anthropic.claude-sonnet-4-20250514-v1:0",
+        "embedding_model_id": "amazon.titan-embed-text-v2:0",
+        "embedding_model_dimensions": 1024
     },
     "output": "cdk.out"
 }

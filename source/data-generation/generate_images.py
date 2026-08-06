@@ -14,6 +14,7 @@ Usage:
 import argparse
 import base64
 import json
+import os
 import time
 from pathlib import Path
 
@@ -81,8 +82,16 @@ def generate_all_images(
     limit: int | None = None,
     resume: bool = False,
     shots: list[str] | None = None,
+    manifest_base: Path | None = None,
 ) -> dict:
-    """Generate images for all products."""
+    """Generate images for all products.
+
+    Args:
+        manifest_base: Paths recorded in the returned manifest are made relative
+            to this directory. Keeping them relative means the manifest is
+            portable and does not leak the generating machine's filesystem
+            layout when committed to the repository.
+    """
 
     shot_types = shots or ["lifestyle", "studio"]
     product_ids = list(prompts.keys())
@@ -112,11 +121,17 @@ def generate_all_images(
 
             filename = f"{product_id.lower()}-{shot_type}.png"
             output_path = output_dir / filename
+            # Record a repo-relative path in the manifest, never an absolute one.
+            recorded_path = (
+                os.path.relpath(output_path, manifest_base)
+                if manifest_base
+                else str(output_path)
+            )
 
             # Resume mode: skip existing files
             if resume and output_path.exists():
                 skipped += 1
-                results[product_id][shot_type] = str(output_path)
+                results[product_id][shot_type] = recorded_path
                 continue
 
             prompt = product_prompts[shot_type]
@@ -126,7 +141,7 @@ def generate_all_images(
 
             if success:
                 generated += 1
-                results[product_id][shot_type] = str(output_path)
+                results[product_id][shot_type] = recorded_path
                 print("✓")
             else:
                 failed += 1
@@ -138,7 +153,7 @@ def generate_all_images(
                 if success:
                     generated += 1
                     failed -= 1
-                    results[product_id][shot_type] = str(output_path)
+                    results[product_id][shot_type] = recorded_path
                     print("✓")
                 else:
                     print("✗ (giving up)")
@@ -204,6 +219,7 @@ def main():
         limit=args.limit,
         resume=args.resume,
         shots=args.shots,
+        manifest_base=base_dir,
     )
 
     stats = result["stats"]
